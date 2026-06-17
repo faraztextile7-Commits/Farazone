@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FARAZONE Collections - Summer, Winter, Streetwear, Luxury & Casual</title>
+    <meta name="description" content="Explore FARAZONE's premium collections: Summer, Winter, Streetwear, Luxury and Casual. Discover curated fashion for every season and style." />
+    <link rel="canonical" href="https://farazone.com/collections" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="FARAZONE Collections - Premium Fashion for Every Season" />
+    <meta property="og:description" content="Discover our curated collections: Summer, Winter, Streetwear, Luxury and Casual." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://farazone.com/collections" />
+    <meta property="og:image" content="https://farazone.com/images/collections-og.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FARAZONE Collections" />
+    <meta name="twitter:description" content="Premium fashion collections for every style." />
+    <meta name="twitter:image" content="https://farazone.com/images/collections-twitter.jpg" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://farazone.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Collections", "item": "https://farazone.com/collections" }
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "FARAZONE Apparel Collections",
+            "description": "Premium fashion collections for every season and style.",
+            "url": "https://farazone.com/collections",
+            "about": {
+                "@type": "Thing",
+                "name": "Fashion Collections"
+            }
+        }
+    </script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --beige: #f5f0e8;
+            --gold: #c9a96e;
+            --gold-light: #e8d5a3;
+            --gray-100: #f8f6f3;
+            --gray-200: #e8e4de;
+            --gray-300: #d0ccc6;
+            --gray-400: #a8a49e;
+            --gray-500: #78746e;
+            --font-primary: 'Georgia', 'Times New Roman', serif;
+            --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow-elegant: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --shadow-luxury: 0 16px 48px rgba(0, 0, 0, 0.12);
+            --shadow-gold: 0 8px 32px rgba(201, 169, 110, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== LOADING SCREEN ===== */
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader-logo {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            letter-spacing: 10px;
+            color: var(--black);
+            margin-bottom: 24px;
+            animation: pulseLogo 1.5s ease-in-out infinite;
+        }
+        .loader-logo span {
+            color: var(--gold);
+        }
+        @keyframes pulseLogo {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+        .loader-bar {
+            width: 120px;
+            height: 2px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .loader-bar-inner {
+            width: 0%;
+            height: 100%;
+            background: var(--gold);
+            animation: loadProgress 1.8s ease forwards;
+        }
+        @keyframes loadProgress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+        .header.scrolled {
+            box-shadow: 0 2px 32px rgba(0, 0, 0, 0.08);
+            border-bottom-color: rgba(0, 0, 0, 0.08);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 1.7rem;
+            letter-spacing: 8px;
+            font-weight: 700;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+        .logo span {
+            color: var(--gold);
+        }
+        .logo-sub {
+            display: block;
+            font-size: 0.45rem;
+            letter-spacing: 4px;
+            color: var(--gray-500);
+            font-weight: 400;
+            margin-top: -2px;
+            text-transform: uppercase;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+        .nav-desktop a {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--charcoal);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+        .nav-desktop a:hover::after,
+        .nav-desktop a.active::after {
+            width: 100%;
+        }
+        .nav-desktop a:hover {
+            color: var(--black);
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-icons button,
+        .nav-icons a {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--charcoal);
+            transition: var(--transition);
+            position: relative;
+            padding: 4px;
+        }
+        .nav-icons button:hover,
+        .nav-icons a:hover {
+            color: var(--gold);
+            transform: translateY(-1px);
+        }
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.5rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--charcoal);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        /* ===== MOBILE NAV ===== */
+        .mobile-nav {
+            position: fixed;
+            top: 76px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            padding: 32px 24px;
+            transform: translateY(-120%);
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-elegant);
+            border-bottom: 1px solid var(--gray-200);
+            max-height: calc(100vh - 76px);
+            overflow-y: auto;
+        }
+        .mobile-nav.open {
+            transform: translateY(0);
+        }
+        .mobile-nav a {
+            display: block;
+            padding: 14px 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--charcoal);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .mobile-nav a:hover {
+            color: var(--gold);
+            padding-left: 12px;
+        }
+        .mobile-nav .nav-icons-mobile {
+            display: flex;
+            gap: 28px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-200);
+        }
+        .mobile-nav .nav-icons-mobile button,
+        .mobile-nav .nav-icons-mobile a {
+            border: none;
+            background: none;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            cursor: pointer;
+            padding: 4px;
+            position: relative;
+        }
+
+        /* ===== SCROLL PROGRESS ===== */
+        #scroll-progress {
+            position: fixed;
+            top: 76px;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            margin-top: 76px;
+            padding: 48px 0 36px;
+            background: var(--beige);
+            border-bottom: 1px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 40%;
+            height: 160%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(-10deg);
+        }
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        .page-header h1 {
+            font-family: var(--font-primary);
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+        }
+        .page-header h1 span {
+            color: var(--gold);
+        }
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            font-size: 0.7rem;
+            color: var(--gray-500);
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+        .breadcrumb a {
+            color: var(--charcoal);
+            transition: var(--transition);
+        }
+        .breadcrumb a:hover {
+            color: var(--gold);
+        }
+        .breadcrumb span {
+            color: var(--gray-400);
+        }
+
+        /* ===== COLLECTION GRID ===== */
+        .collections-grid {
+            padding: 64px 0 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--gray-200);
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+        .collection-card:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-luxury);
+        }
+        .collection-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .collection-card:hover img {
+            transform: scale(1.06);
+        }
+        .collection-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 24px;
+        }
+        .collection-card:hover .overlay {
+            background: rgba(0, 0, 0, 0.45);
+        }
+        .collection-card .overlay h3 {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: var(--white);
+            letter-spacing: 6px;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+        }
+        .collection-card .overlay p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+        .collection-card .overlay .btn-collection {
+            margin-top: 18px;
+            padding: 12px 36px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: var(--white);
+            background: transparent;
+            text-transform: uppercase;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        .collection-card .overlay .btn-collection:hover {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+            transform: scale(1.05);
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-title h2 {
+            font-family: var(--font-primary);
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: var(--black);
+        }
+        .section-title h2 span {
+            color: var(--gold);
+        }
+        .section-title p {
+            color: var(--gray-500);
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 14px auto 0;
+        }
+
+        /* ===== FEATURED PRODUCTS ===== */
+        .collection-products {
+            padding: 0 0 64px;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--white);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-elegant);
+        }
+        .product-card .image-wrap {
+            position: relative;
+            overflow: hidden;
+            background: var(--gray-100);
+            aspect-ratio: 3/4;
+        }
+        .product-card .image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .product-card:hover .image-wrap img {
+            transform: scale(1.06);
+        }
+        .product-card .product-actions {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transform: translateX(16px);
+            transition: var(--transition);
+        }
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .product-card .product-actions button {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            background: var(--white);
+            box-shadow: var(--shadow-elegant);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-card .product-actions button:hover {
+            background: var(--gold);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        .product-card .product-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        .product-card .product-info {
+            padding: 18px 4px 10px;
+        }
+        .product-card .product-info h3 {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .product-card .product-info .category {
+            font-size: 0.65rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .product-card .product-info .price {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        .product-card .product-info .price span {
+            color: var(--gold);
+        }
+
+        /* ===== STATS ===== */
+        .stats-section {
+            padding: 64px 0;
+            background: var(--beige);
+            position: relative;
+            overflow: hidden;
+        }
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 30%;
+            height: 140%;
+            background: rgba(201, 169, 110, 0.05);
+            border-radius: 50%;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .stats-grid .stat {
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        .stats-grid .stat:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-elegant);
+        }
+        .stats-grid .stat .number {
+            font-family: var(--font-primary);
+            font-size: 3.2rem;
+            font-weight: 400;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+        .stats-grid .stat .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray-500);
+            margin-top: 4px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 64px 0 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .logo {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.9;
+            max-width: 300px;
+        }
+        .footer h4 {
+            color: var(--white);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .footer a {
+            display: block;
+            font-size: 0.8rem;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+        .footer a:hover {
+            color: var(--gold);
+            padding-left: 6px;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 16px;
+            margin-top: 14px;
+        }
+        .footer-socials a {
+            font-size: 1.2rem;
+            padding: 0;
+        }
+        .footer-socials a:hover {
+            padding-left: 0;
+            transform: translateY(-2px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        #back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-elegant);
+            z-index: 900;
+        }
+        #back-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        #back-top:hover {
+            background: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .collections-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .collections-grid {
+                grid-template-columns: 1fr;
+            }
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .collection-card .overlay h3 {
+                font-size: 2.2rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .stats-grid .stat .number {
+                font-size: 2.4rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .collection-card .overlay h3 {
+                font-size: 1.8rem;
+                letter-spacing: 3px;
+            }
+            .collection-card .overlay .btn-collection {
+                padding: 8px 20px;
+                font-size: 0.5rem;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader" role="status" aria-label="Loading">
+        <div class="loader-logo">FARAZONE<span>.</span></div>
+        <div class="loader-bar">
+            <div class="loader-bar-inner"></div>
+        </div>
+    </div>
+
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo" aria-label="FARAZONE Apparel Home">
+                FARAZONE<span>.</span>
+                <span class="logo-sub">Apparel</span>
+            </a>
+
+            <nav class="nav-desktop" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="collections.html" class="active">Collections</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-icons">
+                <button aria-label="Search" id="searchToggle">&#128269;</button>
+                <a href="#" aria-label="Wishlist">&#9829;</a>
+                <a href="#" aria-label="Shopping Cart" style="position:relative;">
+                    &#128722;
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE NAV ===== -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-icons-mobile">
+            <button aria-label="Search">&#128269;</button>
+            <a href="#" aria-label="Wishlist">&#9829;</a>
+            <a href="#" aria-label="Shopping Cart">&#128722;</a>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header" aria-labelledby="collections-title">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>Collections</span>
+            </nav>
+            <h1 id="collections-title">Our <span>Collections</span></h1>
+        </div>
+    </section>
+
+    <!-- ===== COLLECTIONS GRID ===== -->
+    <main>
+        <section class="container collections-grid" aria-label="Fashion collections">
+            <!-- Summer -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=450&fit=crop&crop=center" alt="Summer Collection - FARAZONE Apparel" loading="lazy" />
+                <div class="overlay">
+                    <h3>Summer</h3>
+                    <p>SS25 Collection</p>
+                    <button class="btn-collection" onclick="location.href='shop.html?collection=summer'">Explore</button>
+                </div>
+            </div>
+
+            <!-- Winter -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&h=450&fit=crop&crop=center" alt="Winter Collection - FARAZONE Apparel" loading="lazy" />
+                <div class="overlay">
+                    <h3>Winter</h3>
+                    <p>FW25 Collection</p>
+                    <button class="btn-collection" onclick="location.href='shop.html?collection=winter'">Explore</button>
+                </div>
+            </div>
+
+            <!-- Streetwear -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&h=450&fit=crop&crop=center" alt="Streetwear Collection - FARAZONE Apparel" loading="lazy" />
+                <div class="overlay">
+                    <h3>Streetwear</h3>
+                    <p>Urban Style</p>
+                    <button class="btn-collection" onclick="location.href='shop.html?collection=streetwear'">Explore</button>
+                </div>
+            </div>
+
+            <!-- Luxury -->
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&h=450&fit=crop&crop=center" alt="Luxury Collection - FARAZONE Apparel" loading="lazy" />
+                <div class="overlay">
+                    <h3>Luxury</h3>
+                    <p>Premium Collection</p>
+                    <button class="btn-collection" onclick="location.href='shop.html?collection=luxury'">Explore</button>
+                </div>
+            </div>
+
+            <!-- Casual -->
+            <div class="collection-card" style="grid-column: span 2;">
+                <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&h=300&fit=crop&crop=center" alt="Casual Collection - FARAZONE Apparel" loading="lazy" />
+                <div class="overlay">
+                    <h3>Casual</h3>
+                    <p>Everyday Essentials</p>
+                    <button class="btn-collection" onclick="location.href='shop.html?collection=casual'">Explore</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED PRODUCTS ===== -->
+        <section class="collection-products" aria-labelledby="featured-collection-title">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="featured-collection-title">Featured <span>Collections</span></h2>
+                    <p>Curated pieces from our latest collections</p>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="products-grid">
+                    <article class="product-card" aria-label="Product: Summer Linen Shirt">
+                        <div class="image-wrap">
+                            <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=533&fit=crop&crop=center" alt="Summer Linen Shirt - FARAZONE Apparel" loading="lazy" />
+                            <span class="product-badge">Summer</span>
+                            <div class="product-actions">
+                                <button class="quick-view-btn">&#128065;</button>
+                                <button class="wishlist-btn">&#9829;</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Summer Linen Shirt</h3>
+                            <p class="category">Men / Shirts</p>
+                            <p class="price">$89 <span>.00</span></p>
+                        </div>
+                    </article>
+
+                    <article class="product-card" aria-label="Product: Winter Wool Coat">
+                        <div class="image-wrap">
+                            <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400&h=533&fit=crop&crop=center" alt="Winter Wool Coat - FARAZONE Apparel" loading="lazy" />
+                            <span class="product-badge">Winter</span>
+                            <div class="product-actions">
+                                <button class="quick-view-btn">&#128065;</button>
+                                <button class="wishlist-btn">&#9829;</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Winter Wool Coat</h3>
+                            <p class="category">Women / Outerwear</p>
+                            <p class="price">$349 <span>.00</span></p>
+                        </div>
+                    </article>
+
+                    <article class="product-card" aria-label="Product: Streetwear Hoodie">
+                        <div class="image-wrap">
+                            <img src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=400&h=533&fit=crop&crop=center" alt="Streetwear Hoodie - FARAZONE Apparel" loading="lazy" />
+                            <span class="product-badge">Streetwear</span>
+                            <div class="product-actions">
+                                <button class="quick-view-btn">&#128065;</button>
+                                <button class="wishlist-btn">&#9829;</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Streetwear Hoodie</h3>
+                            <p class="category">Men / Hoodies</p>
+                            <p class="price">$124 <span>.00</span></p>
+                        </div>
+                    </article>
+
+                    <article class="product-card" aria-label="Product: Luxury Silk Scarf">
+                        <div class="image-wrap">
+                            <img src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c7?w=400&h=533&fit=crop&crop=center" alt="Luxury Silk Scarf - FARAZONE Apparel" loading="lazy" />
+                            <span class="product-badge">Luxury</span>
+                            <div class="product-actions">
+                                <button class="quick-view-btn">&#128065;</button>
+                                <button class="wishlist-btn">&#9829;</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Luxury Silk Scarf</h3>
+                            <p class="category">Accessories</p>
+                            <p class="price">$156 <span>.00</span></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STATS ===== -->
+        <section class="stats-section" aria-label="Brand statistics">
+            <div class="container stats-grid">
+                <div class="stat">
+                    <div class="number" data-count="120">0</div>
+                    <p class="label">Collections</p>
+                </div>
+                <div class="stat">
+                    <div class="number" data-count="2500">0</div>
+                    <p class="label">Products</p>
+                </div>
+                <div class="stat">
+                    <div class="number" data-count="45">0</div>
+                    <p class="label">Countries</p>
+                </div>
+                <div class="stat">
+                    <div class="number" data-count="1247">0</div>
+                    <p class="label">Reviews</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">FARAZONE<span>.</span></div>
+                    <p>Style That Defines You. Premium fashion for the modern individual.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"></a>
+                        <a href="#" aria-label="Facebook"></a>
+                        <a href="#" aria-label="Twitter"></a>
+                        <a href="#" aria-label="Pinterest"></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Shop</h4>
+                    <a href="shop.html">Men</a>
+                    <a href="shop.html">Women</a>
+                    <a href="shop.html">Kids</a>
+                    <a href="shop.html">Accessories</a>
+                </div>
+                <div>
+                    <h4>About</h4>
+                    <a href="about.html">Our Story</a>
+                    <a href="about.html">Sustainability</a>
+                    <a href="about.html">Careers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 FARAZONE Apparel. All rights reserved.</span>
+                <span>Designed by Faraz</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="back-top" aria-label="Back to top">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== LOADING =====
+        window.addEventListener('load', function() {
+            document.getElementById('loader').classList.add('hidden');
+            animateStats();
+        });
+
+        // ===== SCROLL PROGRESS =====
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+        });
+
+        // ===== STICKY NAV =====
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            header.classList.toggle('scrolled', window.scrollY > 30);
+        });
+
+        // ===== BACK TO TOP =====
+        const backTop = document.getElementById('back-top');
+        window.addEventListener('scroll', function() {
+            backTop.classList.toggle('visible', window.scrollY > 500);
+        });
+        backTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== MOBILE NAV =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', function() {
+            const isOpen = mobileNav.classList.toggle('open');
+            hamburger.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+        mobileNav.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ===== CART COUNTER =====
+        const cartCount = document.getElementById('cartCount');
+        let count = 0;
+
+        document.querySelectorAll('.quick-view-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const card = this.closest('.product-card');
+                const name = card.querySelector('h3')?.textContent || 'Product';
+                alert('🔍 Quick View: ' + name + '\n\nPremium product from FARAZONE Apparel.');
+            });
+        });
+
+        document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isFilled = this.textContent === '❤️';
+                this.textContent = isFilled ? '♡' : '❤️';
+                this.style.color = isFilled ? '' : '#c9a96e';
+                if (!isFilled) alert('Added to your wishlist! ❤️');
+            });
+        });
+
+        // ===== STATS ANIMATION =====
+        function animateStats() {
+            const numbers = document.querySelectorAll('.stat .number');
+            numbers.forEach(function(el) {
+                const target = parseInt(el.dataset.count);
+                let current = 0;
+                const increment = Math.ceil(target / 60);
+                const timer = setInterval(function() {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    el.textContent = current.toLocaleString();
+                }, 25);
+            });
+        }
+
+        // ===== SEARCH TOGGLE =====
+        document.getElementById('searchToggle').addEventListener('click', function() {
+            alert('🔍 Search collections at FARAZONE Apparel.\nUse the Shop page for detailed search.');
+        });
+
+        // ===== SCROLL REVEAL =====
+        const revealElements = document.querySelectorAll('.collection-card, .product-card, .stat');
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        console.log('👗 FARAZONE Apparel - Collections Page Loaded');
+        console.log('📦 5 Collections Available: Summer, Winter, Streetwear, Luxury, Casual');
+        console.log('🖼️ All images are real Unsplash photography');
+    </script>
+</body>
+</html>

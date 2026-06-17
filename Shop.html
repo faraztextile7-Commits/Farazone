@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop FARAZONE Apparel - Premium Men, Women, Kids & Accessories</title>
+    <meta name="description" content="Shop the latest premium fashion collections at FARAZONE Apparel. Explore men's, women's, kids clothing and accessories. Free shipping on orders over $100." />
+    <link rel="canonical" href="https://farazone.com/shop" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Shop FARAZONE Apparel - Premium Fashion Collections" />
+    <meta property="og:description" content="Discover premium fashion for men, women, kids and accessories. Style That Defines You." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://farazone.com/shop" />
+    <meta property="og:image" content="https://farazone.com/images/shop-og.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shop FARAZONE Apparel" />
+    <meta name="twitter:description" content="Premium fashion for everyone. Shop now." />
+    <meta name="twitter:image" content="https://farazone.com/images/shop-twitter.jpg" />
+
+    <!-- JSON-LD: Breadcrumb -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://farazone.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Shop", "item": "https://farazone.com/shop" }
+            ]
+        }
+    </script>
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "FARAZONE Apparel",
+            "url": "https://farazone.com",
+            "logo": "https://farazone.com/images/logo.png",
+            "description": "Premium fashion brand offering stylish clothing for men, women, and kids.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-800-555-0199",
+                "contactType": "Customer Service"
+            }
+        }
+    </script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #ffffff;
+            --black: #1a1a1a;
+            --charcoal: #2c2c2c;
+            --beige: #f5f0e8;
+            --gold: #c9a96e;
+            --gold-light: #e8d5a3;
+            --gray-100: #f8f6f3;
+            --gray-200: #e8e4de;
+            --gray-300: #d0ccc6;
+            --gray-400: #a8a49e;
+            --gray-500: #78746e;
+            --font-primary: 'Georgia', 'Times New Roman', serif;
+            --font-secondary: 'Arial', 'Helvetica', sans-serif;
+            --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow-elegant: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --shadow-luxury: 0 16px 48px rgba(0, 0, 0, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== LOADING SCREEN ===== */
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader-logo {
+            font-family: var(--font-primary);
+            font-size: 2.4rem;
+            letter-spacing: 8px;
+            color: var(--black);
+            margin-bottom: 24px;
+        }
+        .loader-logo span {
+            color: var(--gold);
+        }
+        .loader-bar {
+            width: 120px;
+            height: 2px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .loader-bar-inner {
+            width: 0%;
+            height: 100%;
+            background: var(--gold);
+            animation: loadProgress 1.8s ease forwards;
+        }
+        @keyframes loadProgress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+        .header.scrolled {
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 1.6rem;
+            letter-spacing: 6px;
+            font-weight: 700;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+        .logo span {
+            color: var(--gold);
+        }
+        .logo-sub {
+            display: block;
+            font-size: 0.5rem;
+            letter-spacing: 3px;
+            color: var(--gray-500);
+            font-weight: 400;
+            margin-top: -2px;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav-desktop a {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--charcoal);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+        .nav-desktop a:hover::after,
+        .nav-desktop a.active::after {
+            width: 100%;
+        }
+        .nav-desktop a:hover {
+            color: var(--black);
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .nav-icons button,
+        .nav-icons a {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--charcoal);
+            transition: var(--transition);
+            position: relative;
+            padding: 4px;
+        }
+        .nav-icons button:hover,
+        .nav-icons a:hover {
+            color: var(--gold);
+        }
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.55rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--charcoal);
+            transition: var(--transition);
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        /* ===== MOBILE NAV ===== */
+        .mobile-nav {
+            position: fixed;
+            top: 72px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            padding: 32px 24px;
+            transform: translateY(-120%);
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-elegant);
+            border-bottom: 1px solid var(--gray-200);
+            max-height: calc(100vh - 72px);
+            overflow-y: auto;
+        }
+        .mobile-nav.open {
+            transform: translateY(0);
+        }
+        .mobile-nav a {
+            display: block;
+            padding: 12px 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--charcoal);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .mobile-nav a:hover {
+            color: var(--gold);
+            padding-left: 8px;
+        }
+        .mobile-nav .nav-icons-mobile {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+        }
+        .mobile-nav .nav-icons-mobile button,
+        .mobile-nav .nav-icons-mobile a {
+            border: none;
+            background: none;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            cursor: pointer;
+            padding: 4px;
+            position: relative;
+        }
+
+        /* ===== SCROLL PROGRESS ===== */
+        #scroll-progress {
+            position: fixed;
+            top: 72px;
+            left: 0;
+            height: 2px;
+            background: var(--gold);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            margin-top: 72px;
+            padding: 40px 0 32px;
+            background: var(--gray-100);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .page-header h1 {
+            font-family: var(--font-primary);
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        .page-header h1 span {
+            color: var(--gold);
+        }
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+        .breadcrumb a {
+            color: var(--charcoal);
+            transition: var(--transition);
+        }
+        .breadcrumb a:hover {
+            color: var(--gold);
+        }
+        .breadcrumb span {
+            color: var(--gray-400);
+        }
+
+        /* ===== SHOP LAYOUT ===== */
+        .shop-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            padding: 40px 0 64px;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+        .sidebar h3 {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray-500);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .sidebar .filter-group {
+            margin-bottom: 32px;
+            border-bottom: 1px solid var(--gray-200);
+            padding-bottom: 24px;
+        }
+        .sidebar .filter-group:last-child {
+            border-bottom: none;
+        }
+        .sidebar .filter-group h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        .sidebar .filter-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            padding: 4px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .sidebar .filter-group label:hover {
+            color: var(--black);
+        }
+        .sidebar .filter-group input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--gold);
+            cursor: pointer;
+        }
+        .sidebar .filter-group input[type="radio"] {
+            accent-color: var(--gold);
+            cursor: pointer;
+        }
+        .price-range {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .price-range input {
+            width: 70px;
+            padding: 6px 8px;
+            border: 1px solid var(--gray-200);
+            font-size: 0.75rem;
+            background: var(--white);
+            border-radius: 2px;
+        }
+        .price-range input:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        /* ===== SHOP TOOLBAR ===== */
+        .shop-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .shop-toolbar .results {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+        .shop-toolbar .results strong {
+            color: var(--black);
+        }
+        .shop-toolbar .sort-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .shop-toolbar .sort-group label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-500);
+        }
+        .shop-toolbar .sort-group select {
+            padding: 8px 16px;
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+            font-size: 0.8rem;
+            cursor: pointer;
+            border-radius: 2px;
+            font-family: var(--font-secondary);
+            color: var(--charcoal);
+        }
+        .shop-toolbar .sort-group select:focus {
+            border-color: var(--gold);
+            outline: none;
+        }
+
+        /* ===== SEARCH BAR ===== */
+        .search-bar {
+            display: flex;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            font-size: 0.9rem;
+            background: transparent;
+            outline: none;
+            color: var(--charcoal);
+        }
+        .search-bar input::placeholder {
+            color: var(--gray-400);
+        }
+        .search-bar button {
+            padding: 12px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: var(--gray-500);
+            transition: var(--transition);
+        }
+        .search-bar button:hover {
+            color: var(--gold);
+        }
+
+        /* ===== PRODUCT GRID ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background: var(--white);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+        .product-card .image-wrap {
+            position: relative;
+            overflow: hidden;
+            background: var(--gray-100);
+            aspect-ratio: 3/4;
+        }
+        .product-card .image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .product-card:hover .image-wrap img {
+            transform: scale(1.05);
+        }
+        .product-card .product-actions {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transform: translateX(12px);
+            transition: var(--transition);
+        }
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .product-card .product-actions button {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: var(--white);
+            box-shadow: var(--shadow-elegant);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-card .product-actions button:hover {
+            background: var(--gold);
+            color: var(--white);
+        }
+        .product-card .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        .product-card .product-badge.sale {
+            background: #c0392b;
+        }
+        .product-card .product-badge.new {
+            background: var(--black);
+        }
+        .product-card .product-info {
+            padding: 16px 4px 8px;
+        }
+        .product-card .product-info h3 {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .product-card .product-info .category {
+            font-size: 0.7rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .product-card .product-info .price {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        .product-card .product-info .price span {
+            color: var(--gold);
+        }
+        .product-card .product-info .old-price {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            text-decoration: line-through;
+            margin-left: 8px;
+            font-weight: 400;
+        }
+        .product-card .quick-add {
+            margin-top: 8px;
+            padding: 8px 0;
+            border: none;
+            background: none;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gray-500);
+            border-top: 1px solid var(--gray-200);
+            width: 100%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .product-card .quick-add:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+        .product-card .rating {
+            font-size: 0.7rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+        .product-card .rating span {
+            color: var(--gray-400);
+            margin-left: 4px;
+        }
+
+        /* ===== PAGINATION ===== */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 48px;
+        }
+        .pagination button {
+            padding: 10px 16px;
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+            color: var(--charcoal);
+            min-width: 44px;
+        }
+        .pagination button:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .pagination button.active {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+        .pagination button.active:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* ===== NO RESULTS ===== */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            display: none;
+        }
+        .no-results h3 {
+            font-family: var(--font-primary);
+            font-size: 1.6rem;
+            color: var(--gray-500);
+        }
+        .no-results p {
+            color: var(--gray-400);
+            margin-top: 8px;
+        }
+
+        /* ===== QUICK VIEW MODAL ===== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 5000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: var(--white);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            padding: 40px;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: var(--gray-400);
+            transition: var(--transition);
+            z-index: 10;
+        }
+        .modal-close:hover {
+            color: var(--black);
+            transform: rotate(90deg);
+        }
+        .modal-image {
+            background: var(--gray-100);
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            overflow: hidden;
+        }
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .modal-details h2 {
+            font-family: var(--font-primary);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+        .modal-details .modal-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            letter-spacing: 1.5px;
+        }
+        .modal-details .modal-price {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 12px 0;
+        }
+        .modal-details .modal-price span {
+            color: var(--gold);
+        }
+        .modal-details .modal-desc {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .modal-details .modal-sizes {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0 16px;
+            flex-wrap: wrap;
+        }
+        .modal-details .modal-sizes button {
+            padding: 8px 16px;
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        .modal-details .modal-sizes button:hover {
+            border-color: var(--black);
+        }
+        .modal-details .modal-sizes button.active {
+            border-color: var(--black);
+            background: var(--black);
+            color: var(--white);
+        }
+        .modal-details .btn-add-cart {
+            padding: 14px 40px;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+            margin-top: 8px;
+        }
+        .modal-details .btn-add-cart:hover {
+            background: var(--gold);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 24px;
+            margin-top: 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .logo {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+        .footer h4 {
+            color: var(--white);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .footer a {
+            display: block;
+            font-size: 0.8rem;
+            padding: 4px 0;
+            transition: var(--transition);
+        }
+        .footer a:hover {
+            color: var(--gold);
+            padding-left: 4px;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 16px;
+            margin-top: 12px;
+        }
+        .footer-socials a {
+            font-size: 1.2rem;
+            padding: 0;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        #back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-elegant);
+            z-index: 900;
+        }
+        #back-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        #back-top:hover {
+            background: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        /* ===== MOBILE SIDEBAR TOGGLE ===== */
+        .sidebar-toggle {
+            display: none;
+            padding: 10px 20px;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 16px;
+        }
+        .sidebar-toggle:hover {
+            background: var(--gold);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .shop-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: relative;
+                top: 0;
+                display: none;
+                padding: 16px;
+                background: var(--gray-100);
+                border-radius: 4px;
+                margin-bottom: 24px;
+            }
+            .sidebar.open {
+                display: block;
+            }
+            .sidebar-toggle {
+                display: inline-block;
+            }
+            .modal-content {
+                grid-template-columns: 1fr;
+                padding: 24px;
+                max-height: 95vh;
+            }
+            .modal-image {
+                aspect-ratio: 4/3;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            .shop-toolbar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+            .shop-toolbar .sort-group {
+                justify-content: space-between;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            .modal-content {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .product-card .product-actions {
+                opacity: 1;
+                transform: none;
+                top: 8px;
+                right: 8px;
+            }
+            .product-card .product-actions button {
+                width: 30px;
+                height: 30px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader" role="status" aria-label="Loading">
+        <div class="loader-logo">FARAZONE<span>.</span></div>
+        <div class="loader-bar">
+            <div class="loader-bar-inner"></div>
+        </div>
+    </div>
+
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo" aria-label="FARAZONE Apparel Home">
+                FARAZONE<span>.</span>
+                <span class="logo-sub">Apparel</span>
+            </a>
+
+            <nav class="nav-desktop" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="collections.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-icons">
+                <button aria-label="Search" id="searchToggle">&#128269;</button>
+                <a href="#" aria-label="Wishlist">&#9829;</a>
+                <a href="#" aria-label="Shopping Cart" style="position:relative;">
+                    &#128722;
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE NAV ===== -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-icons-mobile">
+            <button aria-label="Search">&#128269;</button>
+            <a href="#" aria-label="Wishlist">&#9829;</a>
+            <a href="#" aria-label="Shopping Cart">&#128722;</a>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header" aria-labelledby="shop-title">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>Shop</span>
+            </nav>
+            <h1 id="shop-title">Shop <span>FARAZONE</span></h1>
+        </div>
+    </section>
+
+    <!-- ===== SHOP MAIN ===== -->
+    <main class="container shop-layout">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar" aria-label="Product filters">
+            <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false">☰ Filters</button>
+
+            <!-- Search -->
+            <div class="filter-group">
+                <h4>Search</h4>
+                <div class="search-bar" style="border:1px solid var(--gray-200);margin-bottom:0;">
+                    <input type="text" id="productSearch" placeholder="Search products..." aria-label="Search products" />
+                    <button id="searchBtn" aria-label="Submit search">&#128269;</button>
+                </div>
+            </div>
+
+            <!-- Category -->
+            <div class="filter-group">
+                <h4>Category</h4>
+                <label><input type="checkbox" class="filter-category" value="men" checked /> Men</label>
+                <label><input type="checkbox" class="filter-category" value="women" checked /> Women</label>
+                <label><input type="checkbox" class="filter-category" value="kids" checked /> Kids</label>
+                <label><input type="checkbox" class="filter-category" value="accessories" checked /> Accessories</label>
+            </div>
+
+            <!-- Price Range -->
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <div class="price-range">
+                    <input type="number" id="priceMin" placeholder="Min" aria-label="Minimum price" value="0" />
+                    <span>—</span>
+                    <input type="number" id="priceMax" placeholder="Max" aria-label="Maximum price" value="500" />
+                </div>
+            </div>
+
+            <!-- Rating -->
+            <div class="filter-group">
+                <h4>Rating</h4>
+                <label><input type="radio" name="rating" value="4" /> ★★★★ &amp; up</label>
+                <label><input type="radio" name="rating" value="3" /> ★★★ &amp; up</label>
+                <label><input type="radio" name="rating" value="2" /> ★★ &amp; up</label>
+                <label><input type="radio" name="rating" value="0" checked /> All Ratings</label>
+            </div>
+
+            <!-- Availability -->
+            <div class="filter-group">
+                <h4>Availability</h4>
+                <label><input type="checkbox" id="inStock" checked /> In Stock Only</label>
+            </div>
+
+            <button id="clearFilters" style="padding:10px 20px;background:var(--gray-200);border:none;cursor:pointer;font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;transition:var(--transition);width:100%;">Clear All Filters</button>
+        </aside>
+
+        <!-- ===== PRODUCTS AREA ===== -->
+        <section aria-label="Product listings">
+
+            <!-- Toolbar -->
+            <div class="shop-toolbar">
+                <div class="results">
+                    Showing <strong id="productCount">16</strong> products
+                </div>
+                <div class="sort-group">
+                    <label for="sortSelect">Sort by</label>
+                    <select id="sortSelect" aria-label="Sort products">
+                        <option value="featured">Featured</option>
+                        <option value="newest">Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Rating</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productGrid">
+                <!-- Products will be rendered by JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <h3>No products found</h3>
+                <p>Try adjusting your filters or search terms.</p>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>→</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== QUICK VIEW MODAL ===== -->
+    <div class="modal-overlay" id="quickViewModal" role="dialog" aria-modal="true" aria-label="Product quick view">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close quick view">✕</button>
+            <div class="modal-image" id="modalImage">
+                <img src="" alt="Product" id="modalImageSrc" />
+            </div>
+            <div class="modal-details">
+                <h2 id="modalName">Product Name</h2>
+                <p class="modal-category" id="modalCategory">Category</p>
+                <p class="modal-price" id="modalPrice">$0 <span>.00</span></p>
+                <p class="modal-desc" id="modalDesc">Premium quality product from FARAZONE Apparel. Crafted with care and designed for style.</p>
+                <p><strong>Size:</strong></p>
+                <div class="modal-sizes" id="modalSizes">
+                    <button>S</button>
+                    <button>M</button>
+                    <button>L</button>
+                    <button>XL</button>
+                </div>
+                <button class="btn-add-cart" id="modalAddCart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">FARAZONE<span>.</span></div>
+                    <p>Style That Defines You. Premium fashion for the modern individual.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"></a>
+                        <a href="#" aria-label="Facebook"></a>
+                        <a href="#" aria-label="Twitter"></a>
+                        <a href="#" aria-label="Pinterest"></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Shop</h4>
+                    <a href="shop.html">Men</a>
+                    <a href="shop.html">Women</a>
+                    <a href="shop.html">Kids</a>
+                    <a href="shop.html">Accessories</a>
+                </div>
+                <div>
+                    <h4>About</h4>
+                    <a href="about.html">Our Story</a>
+                    <a href="about.html">Sustainability</a>
+                    <a href="about.html">Careers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 FARAZONE Apparel. All rights reserved.</span>
+                <span>Designed by Faraz</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="back-top" aria-label="Back to top">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== PRODUCT DATA WITH REAL UNSPLASH IMAGES =====
+        const products = [{
+            id: 1,
+            name: 'Luxe Wool Blazer',
+            category: 'men',
+            price: 289,
+            rating: 4.8,
+            badge: 'New',
+            image: 'https://images.unsplash.com/photo-1594938378606-c814c3c0b5a4?w=400&h=533&fit=crop&crop=center',
+            desc: 'Premium wool blazer with a tailored fit. Perfect for formal and semi-formal occasions. Crafted from 100% Italian wool.'
+        }, {
+            id: 2,
+            name: 'Silk Midi Dress',
+            category: 'women',
+            price: 214,
+            rating: 4.9,
+            badge: 'Best Seller',
+            image: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&h=533&fit=crop&crop=center',
+            desc: 'Elegant silk midi dress with a flattering silhouette. Ideal for evening events and special occasions.'
+        }, {
+            id: 3,
+            name: 'Leather Sneakers',
+            category: 'men',
+            price: 174,
+            rating: 4.7,
+            badge: 'Sale',
+            image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=533&fit=crop&crop=center',
+            desc: 'Premium leather sneakers with a classic design. Comfort meets style with these versatile everyday shoes.'
+        }, {
+            id: 4,
+            name: 'Cashmere Scarf',
+            category: 'accessories',
+            price: 124,
+            rating: 4.6,
+            badge: 'Limited',
+            image: 'https://images.unsplash.com/photo-1520903920243-00d872a2d1c7?w=400&h=533&fit=crop&crop=center',
+            desc: 'Luxurious cashmere scarf. Soft, warm, and effortlessly elegant. Made from 100% Mongolian cashmere.'
+        }, {
+            id: 5,
+            name: 'Linen Shirt',
+            category: 'men',
+            price: 98,
+            rating: 4.4,
+            badge: 'New',
+            image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=533&fit=crop&crop=center',
+            desc: 'Lightweight linen shirt for the modern man. Breathable, stylish, and perfect for warm weather.'
+        }, {
+            id: 6,
+            name: 'Pleated Skirt',
+            category: 'women',
+            price: 132,
+            rating: 4.5,
+            badge: '',
+            image: 'https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=400&h=533&fit=crop&crop=center',
+            desc: 'Chic pleated skirt with a contemporary twist. Perfect for day to night transitions.'
+        }, {
+            id: 7,
+            name: 'Cotton Blend Tee',
+            category: 'men',
+            price: 48,
+            rating: 4.3,
+            badge: '',
+            image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=533&fit=crop&crop=center',
+            desc: 'Essential cotton blend tee. Versatile and comfortable for everyday wear. A wardrobe staple.'
+        }, {
+            id: 8,
+            name: 'Crossbody Bag',
+            category: 'accessories',
+            price: 86,
+            rating: 4.7,
+            badge: 'New',
+            image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=533&fit=crop&crop=center',
+            desc: 'Stylish crossbody bag crafted from premium materials. Functional, durable, and fashion-forward.'
+        }, {
+            id: 9,
+            name: 'Classic Trench Coat',
+            category: 'women',
+            price: 324,
+            rating: 4.9,
+            badge: '#1',
+            image: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400&h=533&fit=crop&crop=center',
+            desc: 'Timeless trench coat. A wardrobe essential for the modern woman. Elegant, sophisticated, and versatile.'
+        }, {
+            id: 10,
+            name: 'Tailored Trousers',
+            category: 'men',
+            price: 158,
+            rating: 4.6,
+            badge: '',
+            image: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=533&fit=crop&crop=center',
+            desc: 'Sharp tailored trousers with a modern fit. Elevate your formal wear with these premium pants.'
+        }, {
+            id: 11,
+            name: 'Knit Sweater',
+            category: 'women',
+            price: 112,
+            rating: 4.4,
+            badge: '',
+            image: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=533&fit=crop&crop=center',
+            desc: 'Cozy knit sweater with a stylish design. Perfect for cooler days and layering.'
+        }, {
+            id: 12,
+            name: 'Leather Belt',
+            category: 'accessories',
+            price: 54,
+            rating: 4.2,
+            badge: '',
+            image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=533&fit=crop&crop=center',
+            desc: 'Classic leather belt. The perfect finishing touch to any outfit. Made from premium Italian leather.'
+        }, {
+            id: 13,
+            name: 'Denim Jacket',
+            category: 'men',
+            price: 148,
+            rating: 4.5,
+            badge: 'Sale',
+            image: 'https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=400&h=533&fit=crop&crop=center',
+            desc: 'Classic denim jacket with a modern cut. A timeless streetwear staple for every wardrobe.'
+        }, {
+            id: 14,
+            name: 'Wool Trousers',
+            category: 'women',
+            price: 168,
+            rating: 4.3,
+            badge: 'New',
+            image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=533&fit=crop&crop=center',
+            desc: 'Elegant wool trousers with a tailored fit. Sophistication meets comfort in these versatile pants.'
+        }, {
+            id: 15,
+            name: 'Leather Backpack',
+            category: 'accessories',
+            price: 96,
+            rating: 4.8,
+            badge: '',
+            image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=533&fit=crop&crop=center',
+            desc: 'Premium leather backpack. Functional, durable, and stylish. Perfect for work and travel.'
+        }, {
+            id: 16,
+            name: 'Polo Shirt',
+            category: 'men',
+            price: 72,
+            rating: 4.1,
+            badge: '',
+            image: 'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=400&h=533&fit=crop&crop=center',
+            desc: 'Classic polo shirt for a refined casual look. Comfortable, breathable, and versatile.'
+        }];
+
+        let filteredProducts = [...products];
+        let currentPage = 1;
+        const perPage = 12;
+
+        // ===== DOM REFS =====
+        const grid = document.getElementById('productGrid');
+        const noResults = document.getElementById('noResults');
+        const productCount = document.getElementById('productCount');
+        const sortSelect = document.getElementById('sortSelect');
+        const searchInput = document.getElementById('productSearch');
+        const searchBtn = document.getElementById('searchBtn');
+        const priceMin = document.getElementById('priceMin');
+        const priceMax = document.getElementById('priceMax');
+        const inStock = document.getElementById('inStock');
+        const clearBtn = document.getElementById('clearFilters');
+        const pagination = document.getElementById('pagination');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+
+        // Category checkboxes
+        const categoryChecks = document.querySelectorAll('.filter-category');
+        // Rating radios
+        const ratingRadios = document.querySelectorAll('input[name="rating"]');
+
+        // ===== RENDER PRODUCTS =====
+        function renderProducts() {
+            const start = (currentPage - 1) * perPage;
+            const end = start + perPage;
+            const pageProducts = filteredProducts.slice(start, end);
+
+            if (filteredProducts.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+                productCount.textContent = '0';
+                pagination.innerHTML = '';
+                return;
+            }
+            noResults.style.display = 'none';
+            productCount.textContent = filteredProducts.length;
+
+            grid.innerHTML = pageProducts.map(p => `
+                <article class="product-card" data-id="${p.id}" aria-label="Product: ${p.name}">
+                    <div class="image-wrap">
+                        <img src="${p.image}" alt="${p.name} - FARAZONE Apparel" loading="lazy" />
+                        ${p.badge ? `<span class="product-badge ${p.badge === 'Sale' ? 'sale' : p.badge === 'New' || p.badge === 'Limited' ? 'new' : ''}">${p.badge}</span>` : ''}
+                        <div class="product-actions">
+                            <button class="quick-view-btn" data-id="${p.id}" aria-label="Quick View">&#128065;</button>
+                            <button class="wishlist-btn" data-id="${p.id}" aria-label="Add to Wishlist">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>${p.name}</h3>
+                        <p class="category">${p.category.charAt(0).toUpperCase() + p.category.slice(1)}</p>
+                        <div class="rating">★★★★<span>(${p.rating})</span></div>
+                        <p class="price">$${p.price} <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" data-id="${p.id}" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+            `).join('');
+
+            renderPagination();
+        }
+
+        // ===== PAGINATION =====
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredProducts.length / perPage);
+            if (totalPages <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+            let html = '';
+            if (currentPage > 1) {
+                html += `<button data-page="${currentPage - 1}">←</button>`;
+            }
+            for (let i = 1; i <= totalPages; i++) {
+                html += `<button data-page="${i}" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
+            }
+            if (currentPage < totalPages) {
+                html += `<button data-page="${currentPage + 1}">→</button>`;
+            }
+            pagination.innerHTML = html;
+
+            pagination.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const page = parseInt(this.dataset.page);
+                    if (page && page !== currentPage) {
+                        currentPage = page;
+                        renderProducts();
+                        window.scrollTo({ top: document.querySelector('.shop-layout').offsetTop - 100,
+                            behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        // ===== FILTER PRODUCTS =====
+        function filterProducts() {
+            // Category filter
+            const activeCategories = [];
+            categoryChecks.forEach(cb => {
+                if (cb.checked) activeCategories.push(cb.value);
+            });
+
+            // Search filter
+            const searchTerm = searchInput.value.toLowerCase().trim();
+
+            // Price filter
+            const min = parseFloat(priceMin.value) || 0;
+            const max = parseFloat(priceMax.value) || Infinity;
+
+            // Rating filter
+            let ratingFilter = 0;
+            ratingRadios.forEach(r => {
+                if (r.checked) ratingFilter = parseFloat(r.value);
+            });
+
+            filteredProducts = products.filter(p => {
+                const matchCategory = activeCategories.includes(p.category);
+                const matchSearch = p.name.toLowerCase().includes(searchTerm) || p.category.includes(searchTerm);
+                const matchPrice = p.price >= min && p.price <= max;
+                const matchRating = ratingFilter === 0 || p.rating >= ratingFilter;
+                return matchCategory && matchSearch && matchPrice && matchRating;
+            });
+
+            // Sorting
+            const sortVal = sortSelect.value;
+            if (sortVal === 'price-low') {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (sortVal === 'price-high') {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            } else if (sortVal === 'rating') {
+                filteredProducts.sort((a, b) => b.rating - a.rating);
+            } else if (sortVal === 'newest') {
+                filteredProducts.sort((a, b) => b.id - a.id);
+            } else {
+                filteredProducts.sort((a, b) => a.id - b.id);
+            }
+
+            currentPage = 1;
+            renderProducts();
+        }
+
+        // ===== EVENT LISTENERS =====
+        categoryChecks.forEach(cb => cb.addEventListener('change', filterProducts));
+        ratingRadios.forEach(r => r.addEventListener('change', filterProducts));
+        sortSelect.addEventListener('change', filterProducts);
+        searchBtn.addEventListener('click', filterProducts);
+        searchInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') filterProducts();
+        });
+        priceMin.addEventListener('input', filterProducts);
+        priceMax.addEventListener('input', filterProducts);
+        inStock.addEventListener('change', filterProducts);
+
+        clearBtn.addEventListener('click', function() {
+            categoryChecks.forEach(cb => cb.checked = true);
+            ratingRadios.forEach(r => { if (r.value === '0') r.checked = true; });
+            searchInput.value = '';
+            priceMin.value = '0';
+            priceMax.value = '500';
+            inStock.checked = true;
+            sortSelect.value = 'featured';
+            filterProducts();
+        });
+
+        // ===== QUICK VIEW MODAL =====
+        const modal = document.getElementById('quickViewModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalName = document.getElementById('modalName');
+        const modalCategory = document.getElementById('modalCategory');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalImageSrc = document.getElementById('modalImageSrc');
+        const modalAddCart = document.getElementById('modalAddCart');
+        let currentModalProduct = null;
+
+        function openModal(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+            currentModalProduct = product;
+            modalName.textContent = product.name;
+            modalCategory.textContent = product.category.charAt(0).toUpperCase() + product.category.slice(1);
+            modalPrice.innerHTML = `$${product.price} <span>.00</span>`;
+            modalDesc.textContent = product.desc;
+            modalImageSrc.src = product.image;
+            modalImageSrc.alt = product.name + ' - FARAZONE Apparel';
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Grid event delegation
+        grid.addEventListener('click', function(e) {
+            const qvBtn = e.target.closest('.quick-view-btn');
+            if (qvBtn) {
+                const id = parseInt(qvBtn.dataset.id);
+                openModal(id);
+            }
+
+            const wishBtn = e.target.closest('.wishlist-btn');
+            if (wishBtn) {
+                const isFilled = wishBtn.textContent === '❤️';
+                wishBtn.textContent = isFilled ? '♡' : '❤️';
+                wishBtn.style.color = isFilled ? '' : '#c9a96e';
+                if (!isFilled) alert('Added to your wishlist! ❤️');
+            }
+
+            const addBtn = e.target.closest('.quick-add');
+            if (addBtn) {
+                const id = parseInt(addBtn.dataset.id);
+                const product = products.find(p => p.id === id);
+                if (product) {
+                    count++;
+                    cartCount.textContent = count;
+                    const orig = addBtn.textContent;
+                    addBtn.textContent = '✓ Added';
+                    addBtn.style.color = '#c9a96e';
+                    setTimeout(() => {
+                        addBtn.textContent = orig;
+                        addBtn.style.color = '';
+                    }, 1000);
+                }
+            }
+        });
+
+        modalAddCart.addEventListener('click', function() {
+            if (currentModalProduct) {
+                count++;
+                cartCount.textContent = count;
+                const orig = this.textContent;
+                this.textContent = '✓ Added to Cart';
+                this.style.background = '#c9a96e';
+                setTimeout(() => {
+                    this.textContent = orig;
+                    this.style.background = '';
+                }, 1200);
+            }
+        });
+
+        document.getElementById('modalSizes').addEventListener('click', function(e) {
+            if (e.target.tagName === 'BUTTON') {
+                this.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+            }
+        });
+
+        // ===== CART COUNTER =====
+        const cartCount = document.getElementById('cartCount');
+        let count = 0;
+
+        // ===== SIDEBAR TOGGLE =====
+        sidebarToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+            this.textContent = sidebar.classList.contains('open') ? '✕ Close Filters' : '☰ Filters';
+        });
+
+        // ===== LOADING SCREEN =====
+        window.addEventListener('load', function() {
+            document.getElementById('loader').classList.add('hidden');
+            filterProducts();
+        });
+
+        // ===== SCROLL PROGRESS =====
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+        });
+
+        // ===== STICKY NAV =====
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            header.classList.toggle('scrolled', window.scrollY > 30);
+        });
+
+        // ===== BACK TO TOP =====
+        const backTop = document.getElementById('back-top');
+        window.addEventListener('scroll', function() {
+            backTop.classList.toggle('visible', window.scrollY > 500);
+        });
+        backTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== MOBILE NAV =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', function() {
+            const isOpen = mobileNav.classList.toggle('open');
+            hamburger.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+        mobileNav.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ===== SEARCH TOGGLE =====
+        document.getElementById('searchToggle').addEventListener('click', function() {
+            searchInput.focus();
+            if (window.innerWidth <= 1024) {
+                sidebar.classList.add('open');
+                sidebarToggle.textContent = '✕ Close Filters';
+            }
+        });
+
+        console.log('🛍️ FARAZONE Apparel - Shop Page Loaded');
+        console.log('📦 ' + products.length + ' products with real Unsplash images');
+    </script>
+</body>
+</html>

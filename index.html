@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FARAZONE Apparel - Premium Fashion & Clothing | Style That Defines You</title>
+    <meta name="description" content="Discover FARAZONE Apparel - premium fashion for men, women, and kids. Shop the latest collections, streetwear, luxury and casual wear. Style That Defines You." />
+    <link rel="canonical" href="https://farazone.com/" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="FARAZONE Apparel - Premium Fashion & Clothing" />
+    <meta property="og:description" content="Style That Defines You. Shop premium fashion collections at FARAZONE Apparel." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://farazone.com/" />
+    <meta property="og:image" content="https://farazone.com/images/og-image.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FARAZONE Apparel - Premium Fashion" />
+    <meta name="twitter:description" content="Style That Defines You. Shop premium fashion collections." />
+    <meta name="twitter:image" content="https://farazone.com/images/twitter-image.jpg" />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "FARAZONE Apparel",
+            "description": "Premium fashion brand offering stylish clothing for men, women, and kids.",
+            "url": "https://farazone.com",
+            "logo": "https://farazone.com/images/logo.png",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-800-555-0199",
+                "contactType": "Customer Service",
+                "availableLanguage": ["English"]
+            },
+            "sameAs": [
+                "https://instagram.com/farazoneapparel",
+                "https://facebook.com/farazoneapparel",
+                "https://twitter.com/farazoneapparel",
+                "https://pinterest.com/farazoneapparel"
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "FARAZONE Apparel",
+            "url": "https://farazone.com",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://farazone.com/shop?search={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://farazone.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Shop", "item": "https://farazone.com/shop" },
+                { "@type": "ListItem", "position": 3, "name": "Collections", "item": "https://farazone.com/collections" }
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "FARAZONE Premium Collection",
+            "description": "Luxury fashion pieces crafted with premium materials.",
+            "brand": {
+                "@type": "Brand",
+                "name": "FARAZONE Apparel"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "1247"
+            }
+        }
+    </script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --beige: #f5f0e8;
+            --gold: #c9a96e;
+            --gold-light: #e8d5a3;
+            --gray-100: #f8f6f3;
+            --gray-200: #e8e4de;
+            --gray-300: #d0ccc6;
+            --gray-400: #a8a49e;
+            --gray-500: #78746e;
+            --font-primary: 'Georgia', 'Times New Roman', serif;
+            --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow-elegant: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --shadow-luxury: 0 16px 48px rgba(0, 0, 0, 0.12);
+            --shadow-gold: 0 8px 32px rgba(201, 169, 110, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== LOADING SCREEN ===== */
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader-logo {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            letter-spacing: 10px;
+            color: var(--black);
+            margin-bottom: 24px;
+            animation: pulseLogo 1.5s ease-in-out infinite;
+        }
+        .loader-logo span {
+            color: var(--gold);
+        }
+        @keyframes pulseLogo {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+        .loader-bar {
+            width: 120px;
+            height: 2px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .loader-bar-inner {
+            width: 0%;
+            height: 100%;
+            background: var(--gold);
+            animation: loadProgress 2s ease forwards;
+        }
+        @keyframes loadProgress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* ===== STICKY NAVIGATION ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+        .header.scrolled {
+            box-shadow: 0 2px 32px rgba(0, 0, 0, 0.08);
+            border-bottom-color: rgba(0, 0, 0, 0.08);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 1.7rem;
+            letter-spacing: 8px;
+            font-weight: 700;
+            color: var(--black);
+            flex-shrink: 0;
+            position: relative;
+        }
+        .logo span {
+            color: var(--gold);
+        }
+        .logo-sub {
+            display: block;
+            font-size: 0.45rem;
+            letter-spacing: 4px;
+            color: var(--gray-500);
+            font-weight: 400;
+            margin-top: -2px;
+            text-transform: uppercase;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+        .nav-desktop a {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--charcoal);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+        .nav-desktop a:hover::after,
+        .nav-desktop a.active::after {
+            width: 100%;
+        }
+        .nav-desktop a:hover {
+            color: var(--black);
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-icons button,
+        .nav-icons a {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--charcoal);
+            transition: var(--transition);
+            position: relative;
+            padding: 4px;
+        }
+        .nav-icons button:hover,
+        .nav-icons a:hover {
+            color: var(--gold);
+            transform: translateY(-1px);
+        }
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.5rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--charcoal);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        /* ===== MOBILE NAV ===== */
+        .mobile-nav {
+            position: fixed;
+            top: 76px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            padding: 32px 24px;
+            transform: translateY(-120%);
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-elegant);
+            border-bottom: 1px solid var(--gray-200);
+            max-height: calc(100vh - 76px);
+            overflow-y: auto;
+        }
+        .mobile-nav.open {
+            transform: translateY(0);
+        }
+        .mobile-nav a {
+            display: block;
+            padding: 14px 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--charcoal);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .mobile-nav a:hover {
+            color: var(--gold);
+            padding-left: 12px;
+        }
+        .mobile-nav .nav-icons-mobile {
+            display: flex;
+            gap: 28px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-200);
+        }
+        .mobile-nav .nav-icons-mobile button,
+        .mobile-nav .nav-icons-mobile a {
+            border: none;
+            background: none;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            cursor: pointer;
+            padding: 4px;
+            position: relative;
+        }
+
+        /* ===== SCROLL PROGRESS ===== */
+        #scroll-progress {
+            position: fixed;
+            top: 76px;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            margin-top: 76px;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            background: var(--beige);
+            position: relative;
+            overflow: hidden;
+            padding: 40px 0;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -5%;
+            width: 55%;
+            height: 140%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(-8deg);
+            z-index: 0;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 40%;
+            height: 80%;
+            background: rgba(201, 169, 110, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content h1 {
+            font-family: var(--font-primary);
+            font-size: 4.5rem;
+            line-height: 1.05;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+        .hero-content h1 span {
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .hero-content .tagline {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+        .hero-content p {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            max-width: 440px;
+            margin: 16px 0 36px;
+            line-height: 1.9;
+        }
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 48px;
+            background: var(--black);
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+            z-index: -1;
+        }
+        .btn-primary:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        .btn-primary:hover {
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+        .btn-primary-outline {
+            display: inline-block;
+            padding: 14px 44px;
+            background: transparent;
+            color: var(--black);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border: 1.5px solid var(--black);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-left: 12px;
+        }
+        .btn-primary-outline:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 520px;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            box-shadow: var(--shadow-luxury);
+            transition: var(--transition);
+        }
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+        .hero-badge {
+            position: absolute;
+            bottom: 32px;
+            left: -12px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 14px 28px;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            box-shadow: var(--shadow-elegant);
+        }
+
+        /* ===== SECTION TITLES ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 52px;
+        }
+        .section-title h2 {
+            font-family: var(--font-primary);
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: var(--black);
+        }
+        .section-title h2 span {
+            color: var(--gold);
+        }
+        .section-title p {
+            color: var(--gray-500);
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 14px auto 0;
+        }
+
+        /* ===== PRODUCT GRID ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .product-card {
+            background: var(--white);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-elegant);
+        }
+        .product-card .image-wrap {
+            position: relative;
+            overflow: hidden;
+            background: var(--gray-100);
+            aspect-ratio: 3/4;
+        }
+        .product-card .image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .product-card:hover .image-wrap img {
+            transform: scale(1.06);
+        }
+        .product-card .product-actions {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            opacity: 0;
+            transform: translateX(16px);
+            transition: var(--transition);
+        }
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .product-card .product-actions button {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: none;
+            background: var(--white);
+            box-shadow: var(--shadow-elegant);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-card .product-actions button:hover {
+            background: var(--gold);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        .product-card .product-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        .product-card .product-badge.sale {
+            background: #c0392b;
+        }
+        .product-card .product-badge.new {
+            background: var(--black);
+        }
+        .product-card .product-info {
+            padding: 18px 4px 10px;
+        }
+        .product-card .product-info h3 {
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .product-card .product-info .category {
+            font-size: 0.65rem;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .product-card .product-info .price {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        .product-card .product-info .price span {
+            color: var(--gold);
+        }
+        .product-card .product-info .old-price {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            text-decoration: line-through;
+            margin-left: 8px;
+            font-weight: 400;
+        }
+        .product-card .quick-add {
+            margin-top: 10px;
+            padding: 10px 0;
+            border: none;
+            background: none;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray-500);
+            border-top: 1px solid var(--gray-200);
+            width: 100%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .product-card .quick-add:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* ===== COLLECTION BANNER ===== */
+        .collection-banner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--charcoal);
+            color: var(--white);
+            margin: 64px 0;
+            min-height: 380px;
+            overflow: hidden;
+        }
+        .collection-banner .content {
+            padding: 64px 56px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .collection-banner .content h3 {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+        .collection-banner .content h3 span {
+            color: var(--gold);
+        }
+        .collection-banner .content p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            max-width: 380px;
+            line-height: 1.9;
+            margin-bottom: 28px;
+        }
+        .collection-banner .content .btn-primary {
+            background: var(--gold);
+            align-self: flex-start;
+        }
+        .collection-banner .content .btn-primary::before {
+            background: var(--white);
+        }
+        .collection-banner .content .btn-primary:hover {
+            color: var(--black);
+        }
+        .collection-banner .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== BRAND STORY ===== */
+        .brand-story {
+            padding: 80px 0;
+            background: var(--beige);
+        }
+        .brand-story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .brand-story-grid .content h2 {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+        .brand-story-grid .content h2 span {
+            color: var(--gold);
+        }
+        .brand-story-grid .content p {
+            color: var(--gray-500);
+            line-height: 2;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+        .brand-story-grid .image img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            box-shadow: var(--shadow-elegant);
+            transition: var(--transition);
+        }
+        .brand-story-grid .image:hover img {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-luxury);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 24px;
+            text-align: center;
+        }
+        .testimonial-slide .stars {
+            color: var(--gold);
+            font-size: 1.4rem;
+            letter-spacing: 6px;
+            margin-bottom: 16px;
+        }
+        .testimonial-slide blockquote {
+            font-family: var(--font-primary);
+            font-size: 1.4rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+            font-style: italic;
+            max-width: 660px;
+            margin: 0 auto 16px;
+        }
+        .testimonial-slide .author {
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .testimonial-slide .author span {
+            color: var(--gray-400);
+            font-weight: 400;
+            text-transform: none;
+        }
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 36px;
+        }
+        .testimonial-controls button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--gray-200);
+            background: var(--white);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        .testimonial-controls button:hover {
+            background: var(--black);
+            color: var(--white);
+            border-color: var(--black);
+        }
+
+        /* ===== LOOKBOOK ===== */
+        .lookbook {
+            padding: 80px 0;
+            background: var(--gray-100);
+        }
+        .lookbook-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .lookbook-item {
+            aspect-ratio: 3/4;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .lookbook-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .lookbook-item:hover img {
+            transform: scale(1.06);
+        }
+        .lookbook-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .lookbook-item:hover .overlay {
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .lookbook-item .label {
+            color: var(--white);
+            font-size: 0.8rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 12px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+        }
+        .lookbook-item:hover .label {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter {
+            padding: 80px 0;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: rgba(201, 169, 110, 0.02);
+            transform: rotate(15deg);
+        }
+        .newsletter h2 {
+            font-family: var(--font-primary);
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .newsletter h2 span {
+            color: var(--gold);
+        }
+        .newsletter p {
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 28px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        .newsletter-form {
+            display: flex;
+            max-width: 480px;
+            margin: 0 auto;
+            gap: 0;
+            position: relative;
+        }
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            font-size: 0.85rem;
+            outline: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            font-family: var(--font-secondary);
+        }
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.25);
+        }
+        .newsletter-form input:focus {
+            border-color: var(--gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .newsletter-form button {
+            padding: 16px 36px;
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .newsletter-form button:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* ===== INSTAGRAM GALLERY ===== */
+        .instagram-gallery {
+            padding: 64px 0;
+            background: var(--white);
+        }
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+        .insta-item {
+            aspect-ratio: 1;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .insta-item:hover img {
+            transform: scale(1.08);
+        }
+        .insta-item .insta-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(201, 169, 110, 0.2);
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+        .insta-item:hover .insta-overlay {
+            opacity: 1;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 64px 0 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .logo {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.9;
+            max-width: 300px;
+        }
+        .footer h4 {
+            color: var(--white);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .footer a {
+            display: block;
+            font-size: 0.8rem;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+        .footer a:hover {
+            color: var(--gold);
+            padding-left: 6px;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 16px;
+            margin-top: 14px;
+        }
+        .footer-socials a {
+            font-size: 1.2rem;
+            padding: 0;
+        }
+        .footer-socials a:hover {
+            padding-left: 0;
+            transform: translateY(-2px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        #back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-elegant);
+            z-index: 900;
+        }
+        #back-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        #back-top:hover {
+            background: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-image {
+                order: -1;
+            }
+            .hero-image img {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .hero-badge {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .collection-banner {
+                grid-template-columns: 1fr;
+            }
+            .collection-banner .content {
+                padding: 48px 32px;
+                text-align: center;
+            }
+            .collection-banner .content .btn-primary {
+                align-self: center;
+            }
+            .brand-story-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .insta-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .lookbook-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .testimonial-slide blockquote {
+                font-size: 1.1rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            .newsletter-form {
+                flex-direction: column;
+                padding: 0 16px;
+            }
+            .newsletter-form input {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .insta-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .lookbook-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .collection-banner .content h3 {
+                font-size: 2rem;
+            }
+            .brand-story-grid .content h2 {
+                font-size: 2rem;
+            }
+            .hero-badge {
+                padding: 10px 20px;
+                font-size: 0.5rem;
+                bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content .tagline {
+                font-size: 0.7rem;
+            }
+            .btn-primary,
+            .btn-primary-outline {
+                padding: 12px 24px;
+                font-size: 0.6rem;
+            }
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            .collection-banner .content h3 {
+                font-size: 1.6rem;
+            }
+            .collection-banner .content {
+                padding: 32px 20px;
+            }
+            .lookbook-grid {
+                grid-template-columns: 1fr;
+            }
+            .insta-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader" role="status" aria-label="Loading">
+        <div class="loader-logo">FARAZONE<span>.</span></div>
+        <div class="loader-bar">
+            <div class="loader-bar-inner"></div>
+        </div>
+    </div>
+
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo" aria-label="FARAZONE Apparel Home">
+                FARAZONE<span>.</span>
+                <span class="logo-sub">Apparel</span>
+            </a>
+
+            <nav class="nav-desktop" aria-label="Main Navigation">
+                <a href="index.html" class="active">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="collections.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-icons">
+                <button aria-label="Search" id="searchToggle">&#128269;</button>
+                <a href="#" aria-label="Wishlist">&#9829;</a>
+                <a href="#" aria-label="Shopping Cart" style="position:relative;">
+                    &#128722;
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE NAV ===== -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-icons-mobile">
+            <button aria-label="Search">&#128269;</button>
+            <a href="#" aria-label="Wishlist">&#9829;</a>
+            <a href="#" aria-label="Shopping Cart">&#128722;</a>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" aria-label="Hero Banner">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="tagline">New Collection 2025</p>
+                    <h1>Style That <br><span>Defines You</span></h1>
+                    <p>Discover premium fashion crafted for the modern individual. From streetwear to luxury, every piece tells a story of elegance and confidence.</p>
+                    <div>
+                        <a href="shop.html" class="btn-primary">Shop Now</a>
+                        <a href="collections.html" class="btn-primary-outline">Explore</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&h=800&fit=crop&crop=center" alt="FARAZONE Apparel - Premium Fashion Model" loading="lazy" />
+                    <div class="hero-badge">Premium Quality</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURED COLLECTION ===== -->
+        <section class="container" style="padding:64px 24px;" aria-labelledby="featured-title">
+            <div class="section-title">
+                <h2 id="featured-title">Featured <span>Collection</span></h2>
+                <p>Curated pieces for the discerning style</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="products-grid">
+                <article class="product-card" aria-label="Product: Luxe Wool Blazer">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1594938378606-c814c3c0b5a4?w=400&h=533&fit=crop&crop=center" alt="Luxe Wool Blazer - FARAZONE Apparel" loading="lazy" />
+                        <span class="product-badge new">New</span>
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Luxe Wool Blazer</h3>
+                        <p class="category">Men / Outerwear</p>
+                        <p class="price">$289 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+
+                <article class="product-card" aria-label="Product: Silk Midi Dress">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&h=533&fit=crop&crop=center" alt="Silk Midi Dress - FARAZONE Apparel" loading="lazy" />
+                        <span class="product-badge">Best Seller</span>
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Silk Midi Dress</h3>
+                        <p class="category">Women / Dresses</p>
+                        <p class="price">$214 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+
+                <article class="product-card" aria-label="Product: Leather Sneakers">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=533&fit=crop&crop=center" alt="Leather Sneakers - FARAZONE Apparel" loading="lazy" />
+                        <span class="product-badge sale">Sale</span>
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Sneakers</h3>
+                        <p class="category">Men / Footwear</p>
+                        <p class="price">$174 <span>.00</span> <span class="old-price">$220.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+
+                <article class="product-card" aria-label="Product: Cashmere Scarf">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c7?w=400&h=533&fit=crop&crop=center" alt="Cashmere Scarf - FARAZONE Apparel" loading="lazy" />
+                        <span class="product-badge new">Limited</span>
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cashmere Scarf</h3>
+                        <p class="category">Accessories</p>
+                        <p class="price">$124 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== COLLECTION BANNER ===== -->
+        <section class="container" aria-label="Seasonal Collection Banner">
+            <div class="collection-banner">
+                <div class="content">
+                    <h3>Summer <span>Collection</span> 2025</h3>
+                    <p>Embrace the warmth with our curated summer essentials. Lightweight fabrics, effortless elegance, and timeless silhouettes.</p>
+                    <a href="collections.html" class="btn-primary">Discover Now</a>
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=400&fit=crop&crop=center" alt="Summer Collection 2025 - FARAZONE Apparel" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NEW ARRIVALS ===== -->
+        <section class="container" style="padding:0 24px 64px;" aria-labelledby="new-title">
+            <div class="section-title">
+                <h2 id="new-title">New <span>Arrivals</span></h2>
+                <p>Fresh drops for the season ahead</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="products-grid">
+                <article class="product-card" aria-label="Product: Linen Shirt">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=533&fit=crop&crop=center" alt="Linen Shirt - FARAZONE Apparel" loading="lazy" />
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Linen Shirt</h3>
+                        <p class="category">Men / Shirts</p>
+                        <p class="price">$98 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+                <article class="product-card" aria-label="Product: Pleated Skirt">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=400&h=533&fit=crop&crop=center" alt="Pleated Skirt - FARAZONE Apparel" loading="lazy" />
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Pleated Skirt</h3>
+                        <p class="category">Women / Skirts</p>
+                        <p class="price">$132 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+                <article class="product-card" aria-label="Product: Cotton Blend Tee">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=533&fit=crop&crop=center" alt="Cotton Blend Tee - FARAZONE Apparel" loading="lazy" />
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Cotton Blend Tee</h3>
+                        <p class="category">Men / T-Shirts</p>
+                        <p class="price">$48 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+                <article class="product-card" aria-label="Product: Crossbody Bag">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=533&fit=crop&crop=center" alt="Crossbody Bag - FARAZONE Apparel" loading="lazy" />
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Crossbody Bag</h3>
+                        <p class="category">Accessories</p>
+                        <p class="price">$86 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== BRAND STORY ===== -->
+        <section class="brand-story" aria-labelledby="story-title">
+            <div class="container brand-story-grid">
+                <div class="content">
+                    <h2 id="story-title">Our <span>Story</span></h2>
+                    <p>FARAZONE Apparel was born from a vision to redefine modern fashion. We believe that style is not just about clothing — it's about confidence, identity, and self-expression.</p>
+                    <p>Every piece we create is meticulously crafted with premium materials, sustainable practices, and an unwavering commitment to quality. From the streets to the boardroom, FARAZONE is the hallmark of contemporary elegance.</p>
+                    <a href="about.html" class="btn-primary">Discover More</a>
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&h=450&fit=crop&crop=center" alt="FARAZONE Apparel - Brand Story" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== BEST SELLERS ===== -->
+        <section class="container" style="padding:64px 24px;" aria-labelledby="bestseller-title">
+            <div class="section-title">
+                <h2 id="bestseller-title">Best <span>Sellers</span></h2>
+                <p>Customer favorites that define our brand</p>
+                <div class="section-divider"></div>
+            </div>
+            <div class="products-grid">
+                <article class="product-card" aria-label="Product: Classic Trench Coat">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400&h=533&fit=crop&crop=center" alt="Classic Trench Coat - FARAZONE Apparel" loading="lazy" />
+                        <span class="product-badge">#1</span>
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Trench Coat</h3>
+                        <p class="category">Women / Outerwear</p>
+                        <p class="price">$324 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+                <article class="product-card" aria-label="Product: Tailored Trousers">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=533&fit=crop&crop=center" alt="Tailored Trousers - FARAZONE Apparel" loading="lazy" />
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tailored Trousers</h3>
+                        <p class="category">Men / Bottoms</p>
+                        <p class="price">$158 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+                <article class="product-card" aria-label="Product: Knit Sweater">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=533&fit=crop&crop=center" alt="Knit Sweater - FARAZONE Apparel" loading="lazy" />
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Knit Sweater</h3>
+                        <p class="category">Women / Knitwear</p>
+                        <p class="price">$112 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+                <article class="product-card" aria-label="Product: Leather Belt">
+                    <div class="image-wrap">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=533&fit=crop&crop=center" alt="Leather Belt - FARAZONE Apparel" loading="lazy" />
+                        <div class="product-actions">
+                            <button aria-label="Quick View" class="quick-view-btn">&#128065;</button>
+                            <button aria-label="Add to Wishlist" class="wishlist-btn">&#9829;</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Leather Belt</h3>
+                        <p class="category">Accessories</p>
+                        <p class="price">$54 <span>.00</span></p>
+                    </div>
+                    <button class="quick-add" aria-label="Quick Add to Cart">+ Quick Add</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="testimonials" aria-labelledby="testimonial-title">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="testimonial-title">What Our <span>Customers Say</span></h2>
+                    <p>Real stories from the FARAZONE community</p>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="testimonial-slider" role="region" aria-label="Customer testimonials">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-slide">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"FARAZONE has completely transformed my wardrobe. The quality is exceptional and the designs are timeless. I've never felt more confident in my style."</blockquote>
+                            <p class="author">Sophia M. <span>— New York</span></p>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"From the moment I received my order, I knew this was a brand that truly cares about craftsmanship. The attention to detail is remarkable."</blockquote>
+                            <p class="author">James R. <span>— London</span></p>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="stars">★★★★★</div>
+                            <blockquote>"I've been a customer for over two years now, and each season the collections get better. FARAZONE is my go-to for both work and weekend."</blockquote>
+                            <p class="author">Aisha K. <span>— Dubai</span></p>
+                        </div>
+                    </div>
+                    <div class="testimonial-controls">
+                        <button id="prevTestimonial" aria-label="Previous testimonial">←</button>
+                        <button id="nextTestimonial" aria-label="Next testimonial">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== LOOKBOOK ===== -->
+        <section class="lookbook" aria-labelledby="lookbook-title">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="lookbook-title">Fashion <span>Lookbook</span></h2>
+                    <p>Discover our curated style inspirations</p>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="lookbook-grid">
+                    <div class="lookbook-item">
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=533&fit=crop&crop=center" alt="Streetwear Collection - FARAZONE Apparel" loading="lazy" />
+                        <div class="overlay">
+                            <span class="label">Streetwear</span>
+                        </div>
+                    </div>
+                    <div class="lookbook-item">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=533&fit=crop&crop=center" alt="Luxury Collection - FARAZONE Apparel" loading="lazy" />
+                        <div class="overlay">
+                            <span class="label">Luxury</span>
+                        </div>
+                    </div>
+                    <div class="lookbook-item">
+                        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=400&h=533&fit=crop&crop=center" alt="Casual Collection - FARAZONE Apparel" loading="lazy" />
+                        <div class="overlay">
+                            <span class="label">Casual</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NEWSLETTER ===== -->
+        <section class="newsletter" aria-labelledby="newsletter-title">
+            <div class="container">
+                <h2 id="newsletter-title">Stay <span>Inspired</span></h2>
+                <p>Subscribe to receive exclusive offers, style tips, and first access to new collections.</p>
+                <form class="newsletter-form" id="newsletterForm" novalidate>
+                    <input type="email" placeholder="Enter your email address" id="newsletterEmail" aria-label="Email address" required />
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p style="font-size:0.65rem;margin-top:14px;opacity:0.25;letter-spacing:1px;">No spam. Unsubscribe anytime.</p>
+            </div>
+        </section>
+
+        <!-- ===== INSTAGRAM GALLERY ===== -->
+        <section class="instagram-gallery" aria-labelledby="insta-title">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="insta-title">Follow Us <span>@farazone</span></h2>
+                    <p>Style inspiration on Instagram</p>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="insta-grid">
+                    <div class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300&h=300&fit=crop&crop=center" alt="Instagram fashion post" loading="lazy" />
+                        <div class="insta-overlay"></div>
+                    </div>
+                    <div class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=300&h=300&fit=crop&crop=center" alt="Instagram fashion post" loading="lazy" />
+                        <div class="insta-overlay"></div>
+                    </div>
+                    <div class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=300&h=300&fit=crop&crop=center" alt="Instagram fashion post" loading="lazy" />
+                        <div class="insta-overlay"></div>
+                    </div>
+                    <div class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&h=300&fit=crop&crop=center" alt="Instagram fashion post" loading="lazy" />
+                        <div class="insta-overlay"></div>
+                    </div>
+                    <div class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=300&h=300&fit=crop&crop=center" alt="Instagram fashion post" loading="lazy" />
+                        <div class="insta-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">FARAZONE<span>.</span></div>
+                    <p>Style That Defines You. Premium fashion for the modern individual. Crafted with passion, designed for confidence.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"></a>
+                        <a href="#" aria-label="Facebook"></a>
+                        <a href="#" aria-label="Twitter"></a>
+                        <a href="#" aria-label="Pinterest"></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Shop</h4>
+                    <a href="shop.html">Men</a>
+                    <a href="shop.html">Women</a>
+                    <a href="shop.html">Kids</a>
+                    <a href="shop.html">Accessories</a>
+                </div>
+                <div>
+                    <h4>About</h4>
+                    <a href="about.html">Our Story</a>
+                    <a href="about.html">Sustainability</a>
+                    <a href="about.html">Careers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 FARAZONE Apparel. All rights reserved.</span>
+                <span>Designed by Faraz</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="back-top" aria-label="Back to top">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== LOADING SCREEN =====
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(function() {
+                loader.classList.add('hidden');
+            }, 800);
+        });
+
+        // ===== SCROLL PROGRESS =====
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        });
+
+        // ===== STICKY NAV =====
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 30) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ===== BACK TO TOP =====
+        const backTop = document.getElementById('back-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                backTop.classList.add('visible');
+            } else {
+                backTop.classList.remove('visible');
+            }
+        });
+        backTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== MOBILE NAV =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', function() {
+            const isOpen = mobileNav.classList.toggle('open');
+            hamburger.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        mobileNav.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ===== TESTIMONIAL SLIDER =====
+        const track = document.getElementById('testimonialTrack');
+        const slides = track.querySelectorAll('.testimonial-slide');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+
+        function updateSlider() {
+            track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+        }
+
+        document.getElementById('nextTestimonial').addEventListener('click', function() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        });
+
+        document.getElementById('prevTestimonial').addEventListener('click', function() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        });
+
+        let autoSlide = setInterval(function() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }, 6000);
+
+        const sliderContainer = document.querySelector('.testimonial-slider');
+        sliderContainer.addEventListener('mouseenter', function() {
+            clearInterval(autoSlide);
+        });
+        sliderContainer.addEventListener('mouseleave', function() {
+            autoSlide = setInterval(function() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }, 6000);
+        });
+
+        // ===== NEWSLETTER VALIDATION =====
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('newsletterEmail');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value)) {
+                alert('Please enter a valid email address.');
+                email.focus();
+                return;
+            }
+            alert('Thank you for subscribing to FARAZONE Apparel!');
+            email.value = '';
+        });
+
+        // ===== CART COUNTER =====
+        const cartCount = document.getElementById('cartCount');
+        let count = 0;
+
+        document.querySelectorAll('.quick-add').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                count++;
+                cartCount.textContent = count;
+                cartCount.style.transform = 'scale(1.4)';
+                setTimeout(function() {
+                    cartCount.style.transform = 'scale(1)';
+                }, 200);
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Added';
+                btn.style.color = '#c9a96e';
+                setTimeout(function() {
+                    btn.textContent = originalText;
+                    btn.style.color = '';
+                }, 1200);
+            });
+        });
+
+        // ===== QUICK VIEW =====
+        document.querySelectorAll('.quick-view-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const card = this.closest('.product-card');
+                const name = card.querySelector('h3')?.textContent || 'Product';
+                alert('🔍 Quick View: ' + name + '\n\nThis is a premium product from FARAZONE Apparel.\nSize & color options available.');
+            });
+        });
+
+        // ===== WISHLIST =====
+        document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isFilled = this.textContent === '❤️';
+                this.textContent = isFilled ? '♡' : '❤️';
+                this.style.color = isFilled ? '' : '#c9a96e';
+                if (!isFilled) {
+                    alert('Added to your wishlist! ❤️');
+                }
+            });
+        });
+
+        // ===== SEARCH TOGGLE =====
+        document.getElementById('searchToggle').addEventListener('click', function() {
+            const search = prompt('Search FARAZONE Apparel:');
+            if (search && search.trim()) {
+                alert('🔍 Searching for: "' + search.trim() + '"\n(Search functionality available in the Shop page.)');
+            }
+        });
+
+        // ===== SCROLL REVEAL =====
+        const revealElements = document.querySelectorAll('.product-card, .lookbook-item, .insta-item, .collection-banner, .brand-story-grid');
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // ===== KEYBOARD NAVIGATION =====
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (mobileNav.classList.contains('open')) {
+                    mobileNav.classList.remove('open');
+                    hamburger.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+
+        console.log('🚀 FARAZONE Apparel — Style That Defines You');
+        console.log('✨ Premium fashion brand website with real images loaded successfully.');
+    </script>
+</body>
+</html>

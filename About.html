@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About FARAZONE Apparel - Our Story, Mission, Vision & Sustainability</title>
+    <meta name="description" content="Discover the story behind FARAZONE Apparel. Learn about our mission, vision, sustainability commitment, quality standards and design philosophy." />
+    <link rel="canonical" href="https://farazone.com/about" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About FARAZONE Apparel - Premium Fashion Brand" />
+    <meta property="og:description" content="Discover the story, mission and values behind FARAZONE Apparel." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://farazone.com/about" />
+    <meta property="og:image" content="https://farazone.com/images/about-og.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About FARAZONE Apparel" />
+    <meta name="twitter:description" content="Our story, mission and commitment to quality." />
+    <meta name="twitter:image" content="https://farazone.com/images/about-twitter.jpg" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About FARAZONE Apparel",
+            "description": "Learn about our brand story, mission, vision, sustainability and quality standards.",
+            "url": "https://farazone.com/about",
+            "about": {
+                "@type": "Organization",
+                "name": "FARAZONE Apparel",
+                "description": "Premium fashion brand offering stylish clothing for men, women, and kids."
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://farazone.com/" },
+                { "@type": "ListItem", "position": 2, "name": "About", "item": "https://farazone.com/about" }
+            ]
+        }
+    </script>
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --beige: #f5f0e8;
+            --gold: #c9a96e;
+            --gold-light: #e8d5a3;
+            --gray-100: #f8f6f3;
+            --gray-200: #e8e4de;
+            --gray-300: #d0ccc6;
+            --gray-400: #a8a49e;
+            --gray-500: #78746e;
+            --font-primary: 'Georgia', 'Times New Roman', serif;
+            --font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            --transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --shadow-elegant: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --shadow-luxury: 0 16px 48px rgba(0, 0, 0, 0.12);
+            --shadow-gold: 0 8px 32px rgba(201, 169, 110, 0.25);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-secondary);
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== LOADING SCREEN ===== */
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader-logo {
+            font-family: var(--font-primary);
+            font-size: 2.8rem;
+            letter-spacing: 10px;
+            color: var(--black);
+            margin-bottom: 24px;
+            animation: pulseLogo 1.5s ease-in-out infinite;
+        }
+        .loader-logo span {
+            color: var(--gold);
+        }
+        @keyframes pulseLogo {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+        .loader-bar {
+            width: 120px;
+            height: 2px;
+            background: var(--gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .loader-bar-inner {
+            width: 0%;
+            height: 100%;
+            background: var(--gold);
+            animation: loadProgress 1.8s ease forwards;
+        }
+        @keyframes loadProgress {
+            0% {
+                width: 0%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+        .header.scrolled {
+            box-shadow: 0 2px 32px rgba(0, 0, 0, 0.08);
+            border-bottom-color: rgba(0, 0, 0, 0.08);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+        .logo {
+            font-family: var(--font-primary);
+            font-size: 1.7rem;
+            letter-spacing: 8px;
+            font-weight: 700;
+            color: var(--black);
+            flex-shrink: 0;
+        }
+        .logo span {
+            color: var(--gold);
+        }
+        .logo-sub {
+            display: block;
+            font-size: 0.45rem;
+            letter-spacing: 4px;
+            color: var(--gray-500);
+            font-weight: 400;
+            margin-top: -2px;
+            text-transform: uppercase;
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+        .nav-desktop a {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--charcoal);
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+        }
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+        .nav-desktop a:hover::after,
+        .nav-desktop a.active::after {
+            width: 100%;
+        }
+        .nav-desktop a:hover {
+            color: var(--black);
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-icons button,
+        .nav-icons a {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: var(--charcoal);
+            transition: var(--transition);
+            position: relative;
+            padding: 4px;
+        }
+        .nav-icons button:hover,
+        .nav-icons a:hover {
+            color: var(--gold);
+            transform: translateY(-1px);
+        }
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: 0.5rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--charcoal);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        /* ===== MOBILE NAV ===== */
+        .mobile-nav {
+            position: fixed;
+            top: 76px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            padding: 32px 24px;
+            transform: translateY(-120%);
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-elegant);
+            border-bottom: 1px solid var(--gray-200);
+            max-height: calc(100vh - 76px);
+            overflow-y: auto;
+        }
+        .mobile-nav.open {
+            transform: translateY(0);
+        }
+        .mobile-nav a {
+            display: block;
+            padding: 14px 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--gray-200);
+            color: var(--charcoal);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .mobile-nav a:hover {
+            color: var(--gold);
+            padding-left: 12px;
+        }
+        .mobile-nav .nav-icons-mobile {
+            display: flex;
+            gap: 28px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray-200);
+        }
+        .mobile-nav .nav-icons-mobile button,
+        .mobile-nav .nav-icons-mobile a {
+            border: none;
+            background: none;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            cursor: pointer;
+            padding: 4px;
+            position: relative;
+        }
+
+        /* ===== SCROLL PROGRESS ===== */
+        #scroll-progress {
+            position: fixed;
+            top: 76px;
+            left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s linear;
+        }
+
+        /* ===== PAGE HEADER ===== */
+        .page-header {
+            margin-top: 76px;
+            padding: 48px 0 36px;
+            background: var(--beige);
+            border-bottom: 1px solid var(--gray-200);
+            position: relative;
+            overflow: hidden;
+        }
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 40%;
+            height: 160%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(-10deg);
+        }
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        .page-header h1 {
+            font-family: var(--font-primary);
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+        }
+        .page-header h1 span {
+            color: var(--gold);
+        }
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            font-size: 0.7rem;
+            color: var(--gray-500);
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+        .breadcrumb a {
+            color: var(--charcoal);
+            transition: var(--transition);
+        }
+        .breadcrumb a:hover {
+            color: var(--gold);
+        }
+        .breadcrumb span {
+            color: var(--gray-400);
+        }
+
+        /* ===== ABOUT CONTENT ===== */
+        .about-section {
+            padding: 72px 0;
+        }
+        .about-section:nth-child(even) {
+            background: var(--gray-100);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .about-grid.reverse {
+            direction: rtl;
+        }
+        .about-grid.reverse>* {
+            direction: ltr;
+        }
+
+        .about-grid .content h2 {
+            font-family: var(--font-primary);
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        .about-grid .content h2 span {
+            color: var(--gold);
+        }
+        .about-grid .content p {
+            color: var(--gray-500);
+            line-height: 2;
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+        }
+        .about-grid .content ul {
+            margin: 16px 0;
+        }
+        .about-grid .content ul li {
+            padding: 8px 0;
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .about-grid .content ul li:last-child {
+            border-bottom: none;
+        }
+        .about-grid .content ul li::before {
+            content: '✦';
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .about-grid .image {
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-elegant);
+            transition: var(--transition);
+        }
+        .about-grid .image:hover {
+            box-shadow: var(--shadow-luxury);
+            transform: scale(1.01);
+        }
+        .about-grid .image img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+        .about-grid .image:hover img {
+            transform: scale(1.03);
+        }
+        .about-grid .image .label {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 8px 20px;
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 600;
+            box-shadow: var(--shadow-elegant);
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team-section {
+            padding: 72px 0;
+            background: var(--gray-100);
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .team-card {
+            text-align: center;
+            background: var(--white);
+            padding: 32px 20px;
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+            border-radius: 4px;
+        }
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-luxury);
+            border-color: var(--gold);
+        }
+        .team-card .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            overflow: hidden;
+            border: 3px solid var(--gold);
+            transition: var(--transition);
+        }
+        .team-card:hover .avatar {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+        .team-card .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .team-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .team-card .role {
+            font-size: 0.7rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* ===== VALUES ===== */
+        .values-section {
+            padding: 72px 0;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 40px;
+        }
+        .value-card {
+            text-align: center;
+            padding: 40px 28px;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+        .value-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-elegant);
+        }
+        .value-card .icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .value-card h4 {
+            font-family: var(--font-primary);
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        .value-card p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin-top: 10px;
+            line-height: 1.8;
+        }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-family: var(--font-primary);
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+        }
+        .section-title h2 span {
+            color: var(--gold);
+        }
+        .section-title p {
+            color: var(--gray-500);
+            font-size: 0.85rem;
+            margin-top: 6px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 14px auto 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 64px 0 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .logo {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.9;
+            max-width: 300px;
+        }
+        .footer h4 {
+            color: var(--white);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .footer a {
+            display: block;
+            font-size: 0.8rem;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+        .footer a:hover {
+            color: var(--gold);
+            padding-left: 6px;
+        }
+        .footer-socials {
+            display: flex;
+            gap: 16px;
+            margin-top: 14px;
+        }
+        .footer-socials a {
+            font-size: 1.2rem;
+            padding: 0;
+        }
+        .footer-socials a:hover {
+            padding-left: 0;
+            transform: translateY(-2px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        #back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-elegant);
+            z-index: 900;
+        }
+        #back-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        #back-top:hover {
+            background: var(--gold);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-grid.reverse {
+                direction: ltr;
+            }
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .about-grid .content h2 {
+                font-size: 2rem;
+            }
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .about-grid .image .label {
+                bottom: 16px;
+                right: 16px;
+                padding: 6px 14px;
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-grid .content h2 {
+                font-size: 1.6rem;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            .team-card .avatar {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader" role="status" aria-label="Loading">
+        <div class="loader-logo">FARAZONE<span>.</span></div>
+        <div class="loader-bar">
+            <div class="loader-bar-inner"></div>
+        </div>
+    </div>
+
+    <!-- ===== SCROLL PROGRESS ===== -->
+    <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header" role="banner">
+        <div class="container header-inner">
+            <a href="index.html" class="logo" aria-label="FARAZONE Apparel Home">
+                FARAZONE<span>.</span>
+                <span class="logo-sub">Apparel</span>
+            </a>
+
+            <nav class="nav-desktop" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="collections.html">Collections</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <div class="nav-icons">
+                <button aria-label="Search" id="searchToggle">&#128269;</button>
+                <a href="#" aria-label="Wishlist">&#9829;</a>
+                <a href="#" aria-label="Shopping Cart" style="position:relative;">
+                    &#128722;
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MOBILE NAV ===== -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-icons-mobile">
+            <button aria-label="Search">&#128269;</button>
+            <a href="#" aria-label="Wishlist">&#9829;</a>
+            <a href="#" aria-label="Shopping Cart">&#128722;</a>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header" aria-labelledby="about-title">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>About</span>
+            </nav>
+            <h1 id="about-title">About <span>FARAZONE</span></h1>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT CONTENT ===== -->
+    <main>
+
+        <!-- Brand Story -->
+        <section class="about-section" aria-labelledby="story-title">
+            <div class="container about-grid">
+                <div class="content">
+                    <h2 id="story-title">Our <span>Story</span></h2>
+                    <p>FARAZONE Apparel was founded in 2020 with a singular vision: to redefine modern fashion through timeless design, exceptional quality, and uncompromising craftsmanship. What began as a small atelier in New York has grown into a global brand celebrated for its elegant aesthetic.</p>
+                    <p>We believe that clothing is more than just fabric — it's a form of self-expression. Every piece we create is designed to empower, inspire, and elevate the individual who wears it. From the bustling streets of New York to the fashion capitals of the world, FARAZONE is synonymous with style that defines you.</p>
+                    <p>Our journey is driven by a passion for beauty and a commitment to excellence. We source the finest materials, collaborate with skilled artisans, and ensure that every garment meets the highest standards of quality and sustainability.</p>
+                    <a href="collections.html" class="btn-primary" style="display:inline-block;padding:14px 40px;background:var(--black);color:var(--white);text-transform:uppercase;letter-spacing:2px;font-size:0.65rem;font-weight:600;border:none;cursor:pointer;transition:var(--transition);">Explore Our Collections</a>
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=600&h=450&fit=crop&crop=center" alt="FARAZONE Brand Story - Premium Fashion Heritage" loading="lazy" />
+                    <span class="label">Since 2020</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="about-section" style="background:var(--gray-100);" aria-labelledby="mission-title">
+            <div class="container about-grid reverse">
+                <div class="content">
+                    <h2 id="mission-title">Mission &amp; <span>Vision</span></h2>
+                    <p><strong>Our Mission:</strong> To create premium fashion that empowers individuals to express their unique style with confidence and elegance. We are committed to sustainable practices, ethical production, and delivering exceptional value to our customers.</p>
+                    <p><strong>Our Vision:</strong> To become the world's most loved fashion brand — one that inspires, connects, and transcends borders. We envision a future where fashion is a force for good, celebrating diversity, creativity, and the beauty of the human spirit.</p>
+                    <ul>
+                        <li>Empowering self-expression through style</li>
+                        <li>Commitment to sustainability and ethics</li>
+                        <li>Celebrating diversity and inclusion</li>
+                        <li>Innovation in design and craftsmanship</li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&h=450&fit=crop&crop=center" alt="FARAZONE Mission & Vision - Fashion Excellence" loading="lazy" />
+                    <span class="label">Our Purpose</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainability -->
+        <section class="about-section" aria-labelledby="sustainability-title">
+            <div class="container about-grid">
+                <div class="content">
+                    <h2 id="sustainability-title">Sustainability &amp; <span>Ethics</span></h2>
+                    <p>At FARAZONE, we believe that fashion should be beautiful — and responsible. We are deeply committed to minimizing our environmental footprint and ensuring that our production processes are ethical, transparent, and sustainable.</p>
+                    <p>We work with certified suppliers who share our values, using eco-friendly materials such as organic cotton, recycled fabrics, and natural dyes. Our packaging is designed to be minimal, recyclable, and biodegradable.</p>
+                    <p>We also prioritize fair labor practices, ensuring that every worker in our supply chain is treated with dignity, respect, and paid a living wage. Sustainability is not just a goal — it's a core part of who we are.</p>
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=600&h=450&fit=crop&crop=center" alt="FARAZONE Sustainability - Eco-Friendly Fashion" loading="lazy" />
+                    <span class="label">Eco-Friendly</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality & Design -->
+        <section class="about-section" style="background:var(--gray-100);" aria-labelledby="quality-title">
+            <div class="container about-grid reverse">
+                <div class="content">
+                    <h2 id="quality-title">Quality &amp; <span>Design Philosophy</span></h2>
+                    <p>Our design philosophy is rooted in the principles of minimalism, elegance, and timeless appeal. We draw inspiration from art, architecture, and the natural world, translating these influences into clothing that is both sophisticated and wearable.</p>
+                    <p>Quality is at the heart of everything we do. We meticulously select premium fabrics, employ advanced construction techniques, and subject every garment to rigorous quality control. The result is clothing that looks and feels exceptional — piece after piece, season after season.</p>
+                    <ul>
+                        <li>Premium fabrics sourced globally</li>
+                        <li>Meticulous attention to detail</li>
+                        <li>Timeless, minimalist designs</li>
+                        <li>Designed to last beyond seasons</li>
+                    </ul>
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&h=450&fit=crop&crop=center" alt="FARAZONE Design Philosophy - Premium Craftsmanship" loading="lazy" />
+                    <span class="label">Excellence</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="values-section" aria-labelledby="values-title">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="values-title">Our <span>Values</span></h2>
+                    <p>The principles that guide everything we do</p>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="icon">✦</span>
+                        <h4>Excellence</h4>
+                        <p>We strive for excellence in every product, service, and interaction. Quality is never compromised.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="icon">♥</span>
+                        <h4>Integrity</h4>
+                        <p>We operate with honesty, transparency, and respect for our customers, partners, and the planet.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="icon">◈</span>
+                        <h4>Innovation</h4>
+                        <p>We embrace creativity and innovation, pushing the boundaries of design and sustainability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="team-section" aria-labelledby="team-title">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="team-title">Meet The <span>Team</span></h2>
+                    <p>The creative minds behind FARAZONE</p>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=center" alt="Alexandra Voss - Founder" loading="lazy" />
+                        </div>
+                        <h4>Alexandra Voss</h4>
+                        <p class="role">Founder &amp; Creative Director</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=center" alt="Marcus Chen - Head of Design" loading="lazy" />
+                        </div>
+                        <h4>Marcus Chen</h4>
+                        <p class="role">Head of Design</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&h=200&fit=crop&crop=center" alt="Elena Rodriguez - Sustainability Lead" loading="lazy" />
+                        </div>
+                        <h4>Elena Rodriguez</h4>
+                        <p class="role">Sustainability Lead</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=center" alt="David Park - Operations Director" loading="lazy" />
+                        </div>
+                        <h4>David Park</h4>
+                        <p class="role">Operations Director</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">FARAZONE<span>.</span></div>
+                    <p>Style That Defines You. Premium fashion for the modern individual.</p>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"></a>
+                        <a href="#" aria-label="Facebook"></a>
+                        <a href="#" aria-label="Twitter"></a>
+                        <a href="#" aria-label="Pinterest"></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Shop</h4>
+                    <a href="shop.html">Men</a>
+                    <a href="shop.html">Women</a>
+                    <a href="shop.html">Kids</a>
+                    <a href="shop.html">Accessories</a>
+                </div>
+                <div>
+                    <h4>About</h4>
+                    <a href="about.html">Our Story</a>
+                    <a href="about.html">Sustainability</a>
+                    <a href="about.html">Careers</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Returns</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 FARAZONE Apparel. All rights reserved.</span>
+                <span>Designed by Faraz</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="back-top" aria-label="Back to top">↑</button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== LOADING =====
+        window.addEventListener('load', function() {
+            document.getElementById('loader').classList.add('hidden');
+        });
+
+        // ===== SCROLL PROGRESS =====
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+        });
+
+        // ===== STICKY NAV =====
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            header.classList.toggle('scrolled', window.scrollY > 30);
+        });
+
+        // ===== BACK TO TOP =====
+        const backTop = document.getElementById('back-top');
+        window.addEventListener('scroll', function() {
+            backTop.classList.toggle('visible', window.scrollY > 500);
+        });
+        backTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== MOBILE NAV =====
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', function() {
+            const isOpen = mobileNav.classList.toggle('open');
+            hamburger.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+        mobileNav.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ===== CART COUNTER =====
+        const cartCount = document.getElementById('cartCount');
+        let count = 0;
+
+        // ===== SEARCH TOGGLE =====
+        document.getElementById('searchToggle').addEventListener('click', function() {
+            alert('🔍 Search FARAZONE Apparel from the Shop page.');
+        });
+
+        // ===== SCROLL REVEAL =====
+        const revealElements = document.querySelectorAll('.about-grid, .value-card, .team-card');
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        console.log('📖 FARAZONE Apparel - About Page Loaded');
+        console.log('✨ Brand Story, Mission, Vision, Sustainability, Values, Team');
+        console.log('🖼️ All images are real Unsplash photography');
+    </script>
+</body>
+</html>
