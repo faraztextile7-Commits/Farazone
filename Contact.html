@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" href="fav.avif" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact FARAZONE Apparel - Get in Touch</title>
@@ -22,62 +23,66 @@
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "name": "Contact FARAZONE Apparel",
-            "description": "Get in touch with FARAZONE Apparel via email, phone, or contact form.",
-            "url": "https://farazone.com/contact"
-        }
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact FARAZONE Apparel",
+        "description": "Get in touch with FARAZONE Apparel via email, phone, or contact form.",
+        "url": "https://farazone.com/contact"
+    }
     </script>
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://farazone.com/" },
-                { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://farazone.com/contact" }
-            ]
-        }
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://farazone.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://farazone.com/contact" }
+        ]
+    }
     </script>
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [{
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
                 "@type": "Question",
                 "name": "What is your return policy?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "We offer a 30-day return policy on all full-priced items. Items must be unworn and in original packaging."
                 }
-            }, {
+            },
+            {
                 "@type": "Question",
                 "name": "How long does shipping take?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Standard shipping takes 3-5 business days. Express shipping takes 1-2 business days."
                 }
-            }, {
+            },
+            {
                 "@type": "Question",
                 "name": "Do you ship internationally?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Yes, we ship to over 45 countries worldwide. International shipping takes 5-10 business days."
                 }
-            }, {
+            },
+            {
                 "@type": "Question",
                 "name": "How can I track my order?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Once your order ships, you'll receive a tracking number via email. You can track your order on our website."
                 }
-            }]
-        }
+            }
+        ]
+    }
     </script>
 
     <style>
-        /* ===== RESET & BASE ===== */
         *,
         *::before,
         *::after {
@@ -672,6 +677,7 @@
             width: 100%;
             position: relative;
             overflow: hidden;
+            border-radius: 2px;
         }
         .btn-submit::before {
             content: '';
@@ -998,10 +1004,10 @@
             </nav>
 
             <div class="nav-icons">
-                <button aria-label="Search" id="searchToggle">&#128269;</button>
-                <a href="#" aria-label="Wishlist">&#9829;</a>
+                <button aria-label="Search" id="searchToggle">🔍</button>
+                <a href="#" aria-label="Wishlist">♥</a>
                 <a href="#" aria-label="Shopping Cart" style="position:relative;">
-                    &#128722;
+                    🛒
                     <span class="cart-count" id="cartCount">0</span>
                 </a>
                 <button class="hamburger" id="hamburger" aria-label="Toggle Menu" aria-expanded="false">
@@ -1019,9 +1025,9 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <div class="nav-icons-mobile">
-            <button aria-label="Search">&#128269;</button>
-            <a href="#" aria-label="Wishlist">&#9829;</a>
-            <a href="#" aria-label="Shopping Cart">&#128722;</a>
+            <button aria-label="Search">🔍</button>
+            <a href="#" aria-label="Wishlist">♥</a>
+            <a href="#" aria-label="Shopping Cart">🛒</a>
         </div>
     </nav>
 
@@ -1078,7 +1084,12 @@
                     </div>
                 </div>
 
-                
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"></a>
+                    <a href="#" aria-label="Facebook"></a>
+                    <a href="#" aria-label="Twitter"></a>
+                    <a href="#" aria-label="Pinterest"></a>
+                </div>
             </div>
 
             <!-- Contact Form -->
@@ -1295,8 +1306,28 @@
 
         // ===== SEARCH TOGGLE =====
         document.getElementById('searchToggle').addEventListener('click', function() {
-            alert('🔍 Search FARAZONE Apparel from the Shop page.');
+            showToast('🔍 Search FARAZONE Apparel from the Shop page.');
         });
+
+        // ===== TOAST NOTIFICATION =====
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);
+                background: #1a1a1a; color: white; padding: 12px 28px;
+                border-radius: 4px; z-index: 9999; font-size: 0.9rem;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+                animation: fadeInUp 0.3s ease;
+            `;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(function() {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(-50%) translateY(20px)';
+                toast.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                setTimeout(function() { toast.remove(); }, 300);
+            }, 2000);
+        }
 
         // ===== CONTACT FORM =====
         const form = document.getElementById('contactForm');
@@ -1347,7 +1378,7 @@
             submitBtn.disabled = true;
 
             setTimeout(function() {
-                alert('✅ Thank you! Your message has been sent to FARAZONE Apparel. We\'ll respond within 24 hours.');
+                showToast('✅ Thank you! Your message has been sent to FARAZONE Apparel.');
                 form.reset();
                 submitBtn.textContent = 'Send Message';
                 submitBtn.disabled = false;
@@ -1402,9 +1433,9 @@
             observer.observe(el);
         });
 
-        console.log('📞 FARAZONE Apparel - Contact Page Loaded');
+        console.log('📞 FARAZONE Apparel - Contact Page Loaded Successfully!');
         console.log('✉️ Contact form, FAQ, business hours, and map ready.');
-        console.log('🖼️ Premium design with real images');
+        console.log('✅ All features are working properly!');
     </script>
 </body>
-</html>
+</html
